@@ -1,0 +1,198 @@
+{
+  "api": {
+    "api": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "lambdaFunc"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "userAuthentication": {
+      "customAuth": false,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "userAuthenticationPostConfirmation",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL",
+          "FAMILY_NAME",
+          "GIVEN_NAME",
+          "PHONE_NUMBER"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID"
+          ],
+          "category": "auth",
+          "resourceName": "userAuthentication"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "function": {
+    "lambdaFunc": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "websiteprogramariRDSconnection"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "userAuthenticationPostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "websiteprogramariRDSconnection": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_lambdaFunc_database": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lambdaFunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_lambdaFunc_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lambdaFunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_lambdaFunc_host": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lambdaFunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_lambdaFunc_password": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lambdaFunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_lambdaFunc_port": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lambdaFunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_lambdaFunc_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lambdaFunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_lambdaFunc_user": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lambdaFunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_userAuthenticationPostConfirmation_GROUP": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userAuthenticationPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_userAuthenticationPostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userAuthenticationPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_userAuthenticationPostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userAuthenticationPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_websiteprogramariRDSconnection_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "websiteprogramariRDSconnection"
+        }
+      ]
+    },
+    "AMPLIFY_function_websiteprogramariRDSconnection_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "websiteprogramariRDSconnection"
+        }
+      ]
+    }
+  }
+}
