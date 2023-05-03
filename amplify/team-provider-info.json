@@ -21,7 +21,9 @@
         "userAuthenticationPostConfirmation": {
           "GROUP": "",
           "deploymentBucketName": "amplify-websiteprogramari-dev-91443-deployment",
-          "s3Key": "amplify-builds/userAuthenticationPostConfirmation-684b4d474b575157576f-build.zip"
+          "s3Key": "amplify-builds/userAuthenticationPostConfirmation-684b4d474b575157576f-build.zip",
+          "group": "registered",
+          "userPoolId": "eu-west-3_vRQfBAQqP"
         },
         "websiteprogramariRDSconnection": {
           "deploymentBucketName": "amplify-websiteprogramari-dev-91443-deployment",
@@ -29,7 +31,7 @@
         },
         "lambdaFunc": {
           "deploymentBucketName": "amplify-websiteprogramari-dev-91443-deployment",
-          "s3Key": "amplify-builds/lambdaFunc-6431675668666b4a5347-build.zip",
+          "s3Key": "amplify-builds/lambdaFunc-686236465676676f7063-build.zip",
           "host": "iulia-programari-database.cha9omxituke.eu-west-3.rds.amazonaws.com",
           "user": "admin",
           "password": "lucUCL10",

@@ -170,7 +170,23 @@
         }
       ]
     },
+    "AMPLIFY_function_userAuthenticationPostConfirmation_group": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userAuthenticationPostConfirmation"
+        }
+      ]
+    },
     "AMPLIFY_function_userAuthenticationPostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userAuthenticationPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_userAuthenticationPostConfirmation_userPoolId": {
       "usedBy": [
         {
           "category": "function",

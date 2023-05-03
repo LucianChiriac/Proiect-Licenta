@@ -15,6 +15,7 @@ const app = express();
 // ROUTES
 const events = require('./routes/events');
 const slots = require('./routes/slots');
+const users = require('./routes/users');
 //
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
@@ -28,7 +29,7 @@ app.use(function(req, res, next) {
 
 app.use('/events', events);
 app.use('/slots', slots);
-
+app.use('/users', users);
 /**********************
  * Example get method *
  **********************/

@@ -12,5 +12,15 @@
   "triggerTemplate": "PostConfirmation.json.ejs",
   "triggerEventPath": "PostConfirmation.event.json",
   "roleName": "userAuthenticationPostConfirmation",
-  "skipEdit": true
+  "skipEdit": true,
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "group",
+      "environmentVariableName": "GROUP"
+    },
+    {
+      "cloudFormationParameterName": "userPoolId",
+      "environmentVariableName": "userPoolId"
+    }
+  ]
 }

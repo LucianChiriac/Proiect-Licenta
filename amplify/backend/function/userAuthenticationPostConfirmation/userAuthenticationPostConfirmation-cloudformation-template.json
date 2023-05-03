@@ -43,6 +43,12 @@
     },
     "s3Key": {
       "Type": "String"
+    },
+    "group": {
+      "Type": "String"
+    },
+    "userPoolId": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -94,7 +100,10 @@
               "Ref": "AWS::Region"
             },
             "GROUP": {
-              "Ref": "GROUP"
+              "Ref": "group"
+            },
+            "userPoolId": {
+              "Ref": "userPoolId"
             }
           }
         },
