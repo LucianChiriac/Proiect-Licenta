@@ -1,0 +1,65 @@
+body{
+    font-size: 1em;
+}
+
+.appointmentContainer{
+    display:flex;
+    background-color: #D9D9D9;
+    border-radius: 30px;
+    width: 50vw;
+    height: 20vh;
+    margin: 20px auto 20px auto;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0px 0px 6px 0px #91B58B;
+    
+}
+
+.appointmentContainer--firstRow, .appointmentContainer--secondRow{
+    display: flex;
+    justify-content: space-between;
+    max-height: 50%;
+    padding: 2px 3% 2px 3%;
+    align-items: center;
+}
+
+.appointmentContainer--firstRow > div {
+    max-width: 25%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.appointmentContainer--secondRow > div{
+    max-width: 75%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.appointmentContainer--secondRow--buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70%;
+    width: 50%;
+}
+
+.prop{
+    color: grey;
+}
+
+.btn{
+    background-color: #1A8FDD;
+    border : 0px;
+    border-radius:5px;
+    box-shadow: 0px 0px 6px 0px #91B58B;
+    margin: 1px 2px 1px 2px;
+    overflow: hidden;
+}
+
+.Reprogrameaza {
+    margin-left: 0%;
+}
+.Anuleaza {
+    margin-right: 0%;
+    margin-left: auto;
+}

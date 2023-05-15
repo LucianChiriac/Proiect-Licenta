@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Amplify } from 'aws-amplify';
@@ -10,6 +10,12 @@ import { I18n } from 'aws-amplify';
 import { translations } from '@aws-amplify/ui-react';
 import awsExports from './aws-exports';
 import { config } from 'aws-sdk';
+///
+import UserAppointment from './components/User Appointment Box/UserAppointment';
+import appointments from "./components/AppointmentsData"
+import AppointmentsContainer from './components/Appointments Container/AppointmentsContainer';
+import MyDatePicker from './components/Date_Picker/DatePicker';
+///
 
 Amplify.configure(awsExports);
 I18n.putVocabularies(translations);
@@ -79,19 +85,24 @@ const formFields = {
 function App() {
 
   return (
-    < Authenticator formFields={formFields} >
-      {({ signOut, user }) => (
-        <main>
-          <h1>{user.attributes.given_name}</h1>
-          <div className="App">
-            <header className="App-header">
-              <button onClick={signOut}>Sign out</button>
-              <h2>My App Sucks</h2>
-            </header>
-          </div>
-        </main>
-      )}
-    </Authenticator>
+    <div>
+      {/* < Authenticator formFields={formFields} >
+            {({ signOut, user }) => (
+              <main>
+                <h1>{user.attributes.given_name}</h1>
+                <div className="App">
+                  <header className="App-header">
+                    <button onClick={signOut}>Sign out</button>
+                    <h2>My App Sucks</h2>
+                  </header>
+                </div>
+              </main>
+            )}
+          </Authenticator> */}
+          {/* <AppointmentsContainer appointments={appointments}/> */}
+         <MyDatePicker eventDuration={50} bookedSlots={2} form="external-form"/>
+    </div>
+   
 
   );
 }

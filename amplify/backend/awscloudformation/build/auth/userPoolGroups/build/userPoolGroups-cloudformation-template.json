@@ -1,0 +1,72 @@
+{
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"11.0.5\",\"stackType\":\"auth-Cognito-UserPool-Groups\",\"metadata\":{}}",
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "env": {
+      "Type": "String"
+    },
+    "AuthRoleArn": {
+      "Type": "String"
+    },
+    "UnauthRoleArn": {
+      "Type": "String"
+    },
+    "authuserAuthenticationUserPoolId": {
+      "Type": "String",
+      "Default": "authuserAuthenticationUserPoolId"
+    },
+    "authuserAuthenticationAppClientID": {
+      "Type": "String",
+      "Default": "authuserAuthenticationAppClientID"
+    },
+    "authuserAuthenticationAppClientIDWeb": {
+      "Type": "String",
+      "Default": "authuserAuthenticationAppClientIDWeb"
+    }
+  },
+  "Conditions": {
+    "ShouldNotCreateEnvResources": {
+      "Fn::Equals": [
+        {
+          "Ref": "env"
+        },
+        "NONE"
+      ]
+    }
+  },
+  "Resources": {
+    "registeredGroup": {
+      "Type": "AWS::Cognito::UserPoolGroup",
+      "Properties": {
+        "UserPoolId": {
+          "Ref": "authuserAuthenticationUserPoolId"
+        },
+        "Description": "override success",
+        "GroupName": "registered",
+        "Precedence": 1
+      }
+    },
+    "guestsGroup": {
+      "Type": "AWS::Cognito::UserPoolGroup",
+      "Properties": {
+        "UserPoolId": {
+          "Ref": "authuserAuthenticationUserPoolId"
+        },
+        "Description": "override success",
+        "GroupName": "guests",
+        "Precedence": 2
+      }
+    },
+    "adminsGroup": {
+      "Type": "AWS::Cognito::UserPoolGroup",
+      "Properties": {
+        "UserPoolId": {
+          "Ref": "authuserAuthenticationUserPoolId"
+        },
+        "Description": "override success",
+        "GroupName": "admins",
+        "Precedence": 3
+      }
+    }
+  }
+}

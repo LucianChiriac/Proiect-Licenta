@@ -1,0 +1,7 @@
+.appointmentsContainer{
+    background-color:antiquewhite;
+    display:flex;
+    height: 100%;
+    flex-direction: column;
+    overflow-x: auto;
+}

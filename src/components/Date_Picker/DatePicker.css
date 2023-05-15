@@ -1,0 +1,42 @@
+.date-slot-picker{
+  display: flex;
+  gap: 20px;
+}
+
+.Slot-picker-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  background-color: bisque;
+}
+
+.react-datepicker__day--outside-month {
+    color: transparent !important;
+    pointer-events: none;
+  }
+
+.slotOptions{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.selectatiInterval{
+  font-size: 20px;
+}
+
+.sectionTitle{
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.sectionValue{
+  padding-left: 20px;
+  font-weight: 600;
+  color: rgb(35, 112, 151);
+}
+
+.fullMonthMessage{
+  color: brown;
+}

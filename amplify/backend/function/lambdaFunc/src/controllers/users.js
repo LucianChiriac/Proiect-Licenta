@@ -4,7 +4,7 @@ const getUsers = (req, res)=>  {
     const querry = req.query;
     
     const users = async(query) => {
-        let result = await knex.select('*').from('users');
+        let result = await knex.select('*').from('events');
         return result;
    }
    users(querry).then((response)=>{
@@ -15,12 +15,24 @@ const getUsers = (req, res)=>  {
    });
 };
 
-const postUser = (req, res) => {
+const postUser = (req,res) => {
+    const email = req.body.email;
+    const family_name = req.body.family_name;
+    const given_name = req.body.given_name;
+    const phone = req.body.phone;
+    const type = req.body.type;
     const id = req.body.id;
-    cost 
-} 
-
-
-module.exports = {
-    getUsers
+    const insert = async() => {
+        let result = await knex('users').insert({id:id,email:email, family_name:family_name, given_name:given_name, phone:phone, type:type}).onConflict('email').merge();
+        return result;
+    }
+    insert().then((response) => {
+        /// add validations 
+        return res.json({respose:response})
+    })
 }
+  
+module.exports = {
+    getUsers,
+    postUser
+};

@@ -1,0 +1,19 @@
+.slotButton{
+    background-color: aquamarine !important;
+    border-style: solid !important;
+    border-width: 1px 1px 1px 1px !important;
+    border-color: black !important;
+    border-radius: 15px !important;
+}
+
+
+/* The selected button */
+.css-1rjj2wg-MuiButtonBase-root-MuiToggleButton-root.Mui-selected {
+    color: #000000 !important;
+    background-color: rgba(47, 50, 227, 0.626) !important;
+}
+
+/* The container with all buttons */
+.css-mjlvw-MuiToggleButtonGroup-root{
+    gap: 10px;
+}

@@ -8,7 +8,7 @@ const cognitoIdentityServiceProvider = new aws.CognitoIdentityServiceProvider({
  * @type {import('@types/aws-lambda').PostConfirmationTriggerHandler}
  */
 exports.handler = async (event) => {
-  console.log(event);
+
   const groupParams = {
     GroupName: process.env.GROUP,
     UserPoolId: event.userPoolId,
