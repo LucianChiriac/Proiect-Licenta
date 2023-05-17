@@ -1,0 +1,18 @@
+body {
+    background-color: rgba(237, 237, 244, 0.833);
+}
+
+.mainNav{
+    display: flex;
+    justify-content: space-around;
+    height : 10vh;
+    align-items: center;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+  .activeStyle{
+    background-color: aqua;
+  }

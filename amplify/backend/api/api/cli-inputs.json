@@ -21,6 +21,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/appointments": {
+      "name": "/appointments",
+      "lambdaFunction": "lambdaFunc",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

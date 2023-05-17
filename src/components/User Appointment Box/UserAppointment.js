@@ -1,8 +1,15 @@
 import React from 'react';
 import './UserAppointment.css'
 import { maxTimeReschedule } from '../../globalValues';
+import { hoursTillAppointment } from '../../functions/dateManipulation';
 
 function UserAppointment(props){
+
+    const timeLeft = hoursTillAppointment(new Date(props.date), props.ora);
+    let status = props.status;
+    props.status !== 'cancelled'  && timeLeft < 0 ? status = 'passed' : status = "pending";
+  
+
     return(
         <div className="appointmentContainer">
             <div className="appointmentContainer--firstRow">
@@ -16,7 +23,7 @@ function UserAppointment(props){
                 </div>
                 <div>
                     <div className="prop">Durata</div>
-                    <div>{props.durata}</div>
+                    <div>{props.durata} min</div>
                 </div>
                 <div>
                     <div className="prop">Tip sedinta</div>
@@ -26,18 +33,18 @@ function UserAppointment(props){
             <div className="appointmentContainer--secondRow">
                 <div >
                     <div className="prop">Status</div>
-                    <div>{props.status}</div>
+                    <div>{status}</div>
                 </div>
                 <div className="appointmentContainer--secondRow--buttons">
                     {
-                    props.timeLeft >= maxTimeReschedule && 
-                    <button class=" btn Reprogrameaza" type="button">
+                    timeLeft >= maxTimeReschedule && 
+                    <button className=" btn Reprogrameaza" type="button">
                             Reprogrameaza
                     </button>
                     }
                     {
-                    props.prepaid &&
-                        <button class=" btn Anuleaza" type="button">
+                    props.prepaid>0 &&
+                        <button className=" btn Anuleaza" type="button">
                             Anuleaza sedinta
                     </button>
                     }

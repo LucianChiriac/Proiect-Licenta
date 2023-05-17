@@ -1,107 +1,57 @@
 import React,{ useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Amplify } from 'aws-amplify';
-import awsconfig from './aws-exports';
-import { withAuthenticator } from '@aws-amplify/ui-react';
-import { Authenticator } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
-import { I18n } from 'aws-amplify';
-import { translations } from '@aws-amplify/ui-react';
-import awsExports from './aws-exports';
-import { config } from 'aws-sdk';
+
+
 ///
-import UserAppointment from './components/User Appointment Box/UserAppointment';
-import appointments from "./components/AppointmentsData"
-import AppointmentsContainer from './components/Appointments Container/AppointmentsContainer';
+import UserAppointments from './pages/UserAppointments';
 import MyDatePicker from './components/Date_Picker/DatePicker';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+// pages
+import About from "./pages/About"
+import Booking from "./pages/Booking"
+import Contact from "./pages/Contact"
+import Home from "./pages/Home"
+import Questions from "./pages/Questions"
+import Services from "./pages/Services"
+import SignIn from "./pages/SignIn"
+import Layout from "./components/Layouts/Layout"
+import UserLayout from "./components/Layouts/UserLayout"
+import UserProfile from "./pages/user/Profile"
+import UserBookings from "./pages/user/Bookings"
 ///
-
-Amplify.configure(awsExports);
-I18n.putVocabularies(translations);
-I18n.setLanguage('en');
-
-I18n.putVocabularies({
-  'en': {
-    'Sign In': 'Log in',
-    'Create Account': 'Creaza cont',
-    'Sign Up': 'Creaza cont',
-    'Forgot Password': 'Am uitat parola',
-    'Forgot your password?': 'Am uitat parola',
-    'Reset Password': 'Reseteaza parola',
-    'Submit': 'Submit',
-    'Confirm': 'Confirm',
-    'Resend Code': 'Retrimite codul',
-    'Back to Sign In': 'Inapoi la log in'
-  }
-});
-
-
-const formFields = {
-  signIn: {
-    username: {
-      placeholder: "Introduceti adresa dumneavoastra de email:",
-      isRequired: true,
-      label: 'Email:',
-      dialCode: '+40'
-    },
-    password: {
-      placeholder: 'Introduceti parola:',
-      isRequired: true,
-      label: 'Parola'
-    }
-  },
-  signUp: {
-    phone_number: {
-      dialCode: '+40',
-      placeholder: 'Introduceti numarul dumneavoastra de telefon',
-      label: 'Numar de telefon'
-    },
-    email: {
-      placeholder: 'Adresa dumneavoastra de email',
-      label: 'Email'
-    },
-    password: {
-      placeholder: 'Introduceti parola',
-      label: 'Parola'
-    },
-    confirm_password: {
-      placeholder: 'Reintroduceti parola',
-      label: 'Confirmati parola'
-    },
-    family_name: {
-      placeholder: "Numele de familie (ex: Popescu)",
-      label: 'Nume de familie'
-    },
-    given_name: {
-      placeholder: 'Prenumele dumneavoastra',
-      label: 'Prenume'
-    }
-  },
-}
-
 
 
 function App() {
 
   return (
-    <div>
-      {/* < Authenticator formFields={formFields} >
-            {({ signOut, user }) => (
-              <main>
-                <h1>{user.attributes.given_name}</h1>
-                <div className="App">
-                  <header className="App-header">
-                    <button onClick={signOut}>Sign out</button>
-                    <h2>My App Sucks</h2>
-                  </header>
-                </div>
-              </main>
-            )}
-          </Authenticator> */}
-          {/* <AppointmentsContainer appointments={appointments}/> */}
-         <MyDatePicker eventDuration={50} bookedSlots={2} form="external-form"/>
-    </div>
+    <BrowserRouter>
+    <Link to="/DatePicker">Date Picker</Link>
+    <Link to="/User Appointments">User Appointments</Link>
+      <Routes>
+        <Route path="/" element ={<Layout/>}>
+          <Route path="Home" element={<Home/>} />
+          
+          <Route path="/User Appointments" element = {<UserAppointments/>}/>
+          <Route path="About" element={<About/>} />
+          <Route path="Booking" element={<Booking/>} />
+          <Route path="Contact" element={<Contact/>} />
+          <Route path="Questions" element={<Questions/>} />
+          <Route path="Services" element={<Services/>} />
+          <Route path="SignIn" element={<SignIn/>} />
+          <Route path="SignIn" element = {<UserLayout/>}>
+            <Route path="profile" element={<UserProfile/>}/>
+            <Route path="bookings" element={<UserBookings/>}/>
+            <Route path="newBooking" element={<MyDatePicker eventDuration={50} bookedSlots={2}/>} />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
+    // <div>
+    //  
+    //       {/* <AppointmentsContainer appointments={appointments}/> */}
+    //      <MyDatePicker eventDuration={50} bookedSlots={2} form="external-form"/>
+    // </div>
    
 
   );
