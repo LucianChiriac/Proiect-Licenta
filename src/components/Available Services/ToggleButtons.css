@@ -1,0 +1,11 @@
+
+
+/* The selected button */
+.css-1rjj2wg-MuiButtonBase-root-MuiToggleButton-root.Mui-selected{
+    color: #000000 !important;
+    background-color: rgba(211, 211, 226, 0.626) !important;
+}
+.css-1rjj2wg-MuiButtonBase-root-MuiToggleButton-root.Mui-selected .ServiceBox{
+    color: #000000 !important;
+    background-color: rgba(160, 161, 216, 0.626) !important;
+}

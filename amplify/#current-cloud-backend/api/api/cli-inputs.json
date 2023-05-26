@@ -28,6 +28,20 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/create-checkout-session": {
+      "name": "/create-checkout-session",
+      "lambdaFunction": "lambdaFunc",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/stripe-webhook": {
+      "name": "/stripe-webhook",
+      "lambdaFunction": "lambdaFunc",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

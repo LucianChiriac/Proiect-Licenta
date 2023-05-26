@@ -1,0 +1,42 @@
+.userCenterPage{
+   background-color: antiquewhite; 
+   width:100% !important;
+   display: flex;
+   flex-direction: column;
+   padding-left: 20px;
+}
+
+h3{
+    align-self: center;
+}
+
+.PayButton {
+    background-color: #04AA6D !important; 
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    float: right !important;
+
+  }
+  
+.PayButton:hover {
+    background-color: #45a049;
+  }
+
+.MuiStep-root MuiStep-horizontal css-1bw0nnu-MuiStep-root{
+    width: 100% !important;
+}
+
+
+/* Stepper main component */
+.css-8atqhb{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.css-2royc9{
+    padding-right: 50px;
+}

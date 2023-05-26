@@ -1,11 +1,12 @@
-import React from 'react'
-import { Authenticator, withAuthenticator, translations } from '@aws-amplify/ui-react';
+import React, { useEffect } from 'react'
+import { Authenticator, useAuthenticator, View, translations } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { I18n,Amplify } from 'aws-amplify';
 import awsExports from '../aws-exports';
 import { config } from 'aws-sdk';
 import awsconfig from '../aws-exports';
 import UserLayout from '../components/Layouts/UserLayout'
+import { useNavigate, useLocation } from 'react-router'
 
 
 Amplify.configure(awsExports);
@@ -27,7 +28,7 @@ I18n.putVocabularies({
   }
 });
 
-function Authenticator_(){
+function Login(){
     const formFields = {
         signIn: {
           username: {
@@ -70,17 +71,27 @@ function Authenticator_(){
           }
         },
       }
+  const { route } = useAuthenticator( (context) => [context.route])
+  const location = useLocation();
+  const navigate = useNavigate();
+  let from = location.state?.from?.pathname || '/';
+
+  useEffect(() =>{
+    if (route === 'authenticated'){
+      //navigate(from, {replace: true});
+      navigate("/profile")
+    }
+  }, [route, navigate, from]);
+
   return (
-    < Authenticator formFields={formFields} >
-                {({ signOut, user }) => (
-                    <UserLayout/>
-                )}
-    </Authenticator>
+    <View className="auth-wrapper">
+      <Authenticator formFields={formFields}></Authenticator>
+    </View>
   )    
 }
 
 
-export default Authenticator_
+export default Login
 
 // <main>
 //                     <h1>Bine ai revenit, {user.attributes.given_name}</h1>

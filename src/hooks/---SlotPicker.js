@@ -7,59 +7,52 @@ import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import "./ToggleButtons.css"
 import { getSlotData } from "../api/getSlotData.js"
 
-function useSlotPicker(props){
-
-    
+function SlotPicker(props){
     const eventDuration = props.eventDuration; // number of minutes event takes
     const bookedSlots = props.bookedSlots; // slots booked in calendar
+    
     const [currentMonth, setCurrentMonth] = useState({
         firstDay : format(addDays(new Date(),minDate), 'yyyy-MM-dd'),
         lastDay : format(lastDayOfMonth(new Date()), "yyyy-MM-dd"),
-      });
-
+    });
     const [monthInformation, setMonthInformation] = useState([])
     const [excludeDates, setExcludeDates] = useState([])
     const [firstAvailableDate, setFirstAvailableDate] = useState(null)
     const [intervalButtons, setIntervalButtons] = useState(); ///
     const [selectedDate, setSelectedDate] = useState(null)
     const [selectedSlot, setSelectedSlot] = useState(null)
-    const [error, setError] = useState(null);
-    //const [loading, setLoading] = useState(true);
+
     
-    useEffect(function() {
-      try {
-        getSlotData(currentMonth.firstDay, currentMonth.lastDay)
-            .catch(err => {
-              setError(err);
-              console.log(err);})
-            .then(data => {
-              const allSlots = [...data];
-              let result = processIncomingSlots(allSlots, eventDuration, bookedSlots, currentMonth.firstDay, currentMonth.lastDay, dayStart, dayEnd);
-              let excludeDates = getUnavailableDates(result);
-              let firstAvailableDay = getFirstAvailableDate(result);
-              let resultWBtn = result.map( (obj) => {
-              let buttons = obj.availableIntervals.map((interval, index) => (
-                <ToggleButton
-                    className = "slotButton" 
-                    value={interval.displayValue} 
-                    key={index}
-                    color="success">
-                    {interval.displayValue}
-                </ToggleButton>
-                ))
-            
-            return ({...obj, buttons : [...buttons]});
-              }) 
-              setMonthInformation(resultWBtn);
-              setExcludeDates(excludeDates);
-              setFirstAvailableDate(firstAvailableDay);
-              setSelectedDate(firstAvailableDay);
-            });
-      
-      } catch (error) {
-        console.log("Error is");
-        console.log(error);
-      }
+    useEffect(() => {
+        async function fetchData(url){
+            const data = await fetch(url)
+            .then(res => res.json())
+            return data;
+        }
+        const data = fetchData(`https://zknyo7t9m3.execute-api.eu-west-3.  amazonaws.com/dev/slots/${currentMonth.firstDay}/${currentMonth.lastDay}`)
+
+        const allSlots = [...data.body];
+        // returns an object containing all available time-intervals for each day in the month
+        let result = processIncomingSlots(allSlots, eventDuration, bookedSlots, currentMonth.firstDay, currentMonth.lastDay, dayStart, dayEnd);
+        let excludeDates = getUnavailableDates(result);
+        let firstAvailableDay = getFirstAvailableDate(result);
+        let resultWBtn = result.map( (obj) => {
+        let buttons = obj.availableIntervals.map((interval, index) => (
+            <ToggleButton
+                className = "slotButton" 
+                value={interval.displayValue} 
+                key={index}
+                color="success">
+                {interval.displayValue}
+            </ToggleButton>
+            ))
+    
+        return ({...obj, buttons : [...buttons]});
+        }) 
+        setMonthInformation(resultWBtn);
+        setExcludeDates(excludeDates);
+        setFirstAvailableDate(firstAvailableDay);
+        setSelectedDate(firstAvailableDay);
     }, [currentMonth.firstDay]);
 
     useEffect(() => {
@@ -143,12 +136,10 @@ function useSlotPicker(props){
         intervalButtons,
         selectedDate,
         selectedSlot,
-        error,
-        //loading,
         formatSelectedDate,
         handleMonthNavigation,
         handleDateChange,
         getMonthText}
 }
 
-export default useSlotPicker;
+export default SlotPicker;

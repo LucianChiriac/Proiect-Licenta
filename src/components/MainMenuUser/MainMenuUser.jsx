@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./MainMenuUser.css"
 import { Authenticator, translations } from '@aws-amplify/ui-react';
 
@@ -49,16 +49,17 @@ function MainMenuUser(){
       }
     return(
         <nav className="MainMenuUser">
-            <Link to="profile">Profil</Link>
-            <Link to="bookings">Programarile mele</Link>
-            <Link to="newBooking">Programare noua</Link>
-            <Link to="/SignIn">
+            <NavLink to="profile" end className={({isActive}) => isActive ? "activeStyle" : ""}>Profil</NavLink>
+            <NavLink to="bookings" className={({isActive}) => isActive ? "activeStyle" : ""}>Programarile mele</NavLink>
+            <NavLink to="newBooking" className={({isActive}) => isActive ? "activeStyle" : ""}>Programare noua</NavLink>
+            <NavLink to="/login" className={({isActive}) => isActive ? "activeStyle" : ""}>
                 < Authenticator formFields={formFields} >
                 {({ signOut, user }) => (
                     <button onClick={signOut}>Sign out</button>
+                    // <NavLink to="/login" onClick={signOut}>Sign out</NavLink>
                 )}
                 </Authenticator>
-            </Link>
+            </NavLink>
         </nav>
     )
 }

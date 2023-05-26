@@ -1,0 +1,16 @@
+
+.css-mjlvw-MuiToggleButtonGroup-root{
+    display: grid !important; 
+    width: 100% !important;
+    grid-template-columns: minmax(200px,350px) minmax(200px,350px) !important;
+    grid-row-gap : 20px !important;
+    grid-column-gap: 20px !important;
+}
+
+.css-1rjj2wg-MuiButtonBase-root-MuiToggleButton-root{
+    border: none !important;
+}
+
+.css-mjlvw-MuiToggleButtonGroup-root .category{
+    grid-column:1/ span 2;
+}
