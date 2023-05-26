@@ -5,7 +5,7 @@ import './App.css';
 ///
 import UserAppointments from './pages/UserAppointments';
 import MyDatePicker from './components/Date_Picker/DatePicker';
-import { RouterProvider, createBrowserRouter, createRoutesFromElements,Route, Link } from "react-router-dom"
+import { RouterProvider, createBrowserRouter, createRoutesFromElements,Route, Link,browserHistory } from "react-router-dom"
 // pages
 import About from "./pages/About"
 import Booking from "./pages/Booking"
