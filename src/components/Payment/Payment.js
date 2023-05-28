@@ -19,9 +19,7 @@ function Payment(){
 
     const { serviceData, dateData, setDateData } = useContext(multiStepContext)
     const [ errorMessage, setErrorMessage ] = useState(null);
-    console.log("The service data is:")
-    console.log(serviceData)
-    console.log(dateData)
+  
     useEffect(()=>{
         fetch(`https://zknyo7t9m3.execute-api.eu-west-3.amazonaws.com/dev/create-checkout-session/${serviceData.id}`, {
             method: 'POST',

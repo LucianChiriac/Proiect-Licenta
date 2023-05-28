@@ -78,8 +78,10 @@ function Login(){
 
   useEffect(() =>{
     if (route === 'authenticated'){
-      //navigate(from, {replace: true});
-      navigate("/user")
+      if (from === "/") // from root
+        navigate("/user")
+      else
+        navigate(from, {replace: true})
     }
   }, [route, navigate, from]);
 

@@ -12,12 +12,12 @@ import Payment from '../../components/Payment/Payment';
 import BookingReview from '../../components/BookingReview/BookingReview';
 import StepContextProvider, {multiStepContext} from '../../StepperContext';
 import "./userPages.css"
+
 const steps = ['Selectati un serviciu', 'Selectati data si ora', 'Confirmare programare', 'Plata'];
 
 export default function HorizontalLinearStepper() {
   //const [activeStep, setActiveStep] = React.useState(0);
   const {activeStep, setActiveStep, serviceData, dateData} = useContext(multiStepContext)
-
   const getStepContent = (step) =>{
     switch(step){
         case 0:

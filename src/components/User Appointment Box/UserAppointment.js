@@ -9,7 +9,8 @@ function UserAppointment(props){
     let status = props.status;
     props.status !== 'cancelled'  && timeLeft < 0 ? status = 'passed' : status = "pending";
   
-
+    console.log("Inside the box, i get this data")
+    console.log(props)
     return(
         <div className="appointmentContainer">
             <div className="appointmentContainer--firstRow">

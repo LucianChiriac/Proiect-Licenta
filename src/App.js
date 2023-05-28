@@ -52,14 +52,13 @@ const router = createBrowserRouter(createRoutesFromElements(
               element={<UserBookings/>}
             />
             <Route path="newBooking" 
-              //element={<SelectService/>}
               element={
               <StepContextProvider>
                 <NewAppointment/>
               </StepContextProvider>}
               loader={servicesLoader}
-            >
-            </Route>
+            />
+            
           </Route>
         </Route>
 ))
