@@ -18,21 +18,21 @@ function Header(){
     }
 
     return(
-        <header>
+        <header className="mainHeader">
             <nav className="mainNav">
                 {/* <Button onClick={() => navigate('/')}>Home</Button> */}
                 <NavLink to="/Home" 
-                className={({isActive}) => isActive ? "activeStyle" : ""}
+                className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}
                 >Home</NavLink>
-                <NavLink to="/About" className={({isActive}) => isActive ? "activeStyle" : ""}>Despre</NavLink>
-                <NavLink to="/Services" className={({isActive}) => isActive ? "activeStyle" : ""}>Servicii</NavLink>
-                <NavLink to="/Booking" className={({isActive}) => isActive ? "activeStyle" : ""}>Booking</NavLink>
-                <NavLink to="/Questions" className={({isActive}) => isActive ? "activeStyle" : ""}>Intrebari</NavLink>
-                <NavLink to="/Contact" className={({isActive}) => isActive ? "activeStyle" : ""}>Contact</NavLink>
+                <NavLink to="/About" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Despre</NavLink>
+                <NavLink to="/Services" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Servicii</NavLink>
+                <NavLink to="/Booking" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Booking</NavLink>
+                <NavLink to="/Questions" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Intrebari</NavLink>
+                <NavLink to="/Contact" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Contact</NavLink>
                 {route !== 'authenticated' ? (
-                    <NavLink to="/login" className={({isActive}) => isActive ? "activeStyle" : ""}>Sign in</NavLink>
+                    <NavLink to="/login" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Sign in</NavLink>
                 ) : (
-                    <NavLink to="/user" className={({isActive}) => isActive ? "activeStyle" : ""}>Profil</NavLink>
+                    <NavLink to="/user" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Profil</NavLink>
                     // <Button onClick={() => logOut()}>Logout</Button>
                 )}
             </nav>

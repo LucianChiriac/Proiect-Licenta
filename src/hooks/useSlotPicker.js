@@ -9,7 +9,8 @@ import { getSlotData } from "../api/getSlotData.js"
 
 function useSlotPicker(props){
 
-    
+    console.log(`Props inside useSlotPicker `)
+    console.log(props)
     const eventDuration = props.eventDuration; // number of minutes event takes
     const bookedSlots = props.bookedSlots; // slots booked in calendar
     const [currentMonth, setCurrentMonth] = useState({

@@ -39,7 +39,7 @@ function AppointmentsContainer(props) {
             )
         })
         return (
-        <div className="appointmentsContainer">
+        <div className="AppointmentsContainer">
             {appointmentList}
         </div>
     )

@@ -1,4 +1,13 @@
 .userLayoutPage{
-    height : 100%;
+    height : 89vh; /* 10vh is the height of the Navigation Header*/
     display: flex;
 }
+
+.outletWrapper {
+    flex-grow: 1;
+    padding-left: 220px;
+  }
+  
+  .outlet {
+    /* Add styles for the Outlet component */
+  }

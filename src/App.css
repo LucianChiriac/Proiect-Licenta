@@ -32,6 +32,28 @@
   color: #61dafb;
 }
 
+.greenButton {
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #25A034; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide the overflowing content */
+  text-overflow: ellipsis; /* Add an ellipsis (...) when text overflows */
+}
+
+.greenButton:hover {
+  background-color: #04905d;
+}
+.hidden{
+  visibility: hidden;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

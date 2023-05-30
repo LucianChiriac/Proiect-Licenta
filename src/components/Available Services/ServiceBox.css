@@ -1,13 +1,16 @@
 .ServiceBox{
     background-color:#D9D9D9;
     border-radius: 17.165px;    
-    padding: 10px 10px 10px 20px;
+    padding: 10px 20px 10px 20px;
+    min-width: 250px;
     overflow: clip;
     white-space: nowrap;
 }
-/* The selected button */
-/* .css-1rjj2wg-MuiButtonBase-root-MuiToggleButton-root.Mui-selected {
-    color: #000000 !important;
-    background-color: rgba(47, 50, 227, 0.626) !important;
-} */
 
+.ServiceBox-data:first-child{
+    font-weight: 900;
+}
+
+.ServiceBox-data:not(first-child){
+    text-align: left;
+}

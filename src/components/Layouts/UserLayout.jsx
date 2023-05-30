@@ -5,9 +5,11 @@ import "./UserLayout.css"
 
 export default function userLayout() {
     return (
-        <div className="userLayoutPage">
+        <div className="userLayoutPage" id="userLayoutPage">
             <MainMenuUser />
-            <Outlet />
+            <div className="outletWrapper" id="outletWrapper">
+                <Outlet className="outlet" />
+            </div>
         </div>
     )
 }

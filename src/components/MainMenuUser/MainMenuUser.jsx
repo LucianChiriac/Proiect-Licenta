@@ -2,7 +2,10 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./MainMenuUser.css"
 import { Authenticator, translations } from '@aws-amplify/ui-react';
-
+import  Button from "../Buttons/leftMenuButtons"; 
+import { FaRegUserCircle } from "react-icons/fa"
+import { BsCalendar4Week, BsBoxArrowInLeft } from "react-icons/bs"
+import { LuCalendarPlus } from "react-icons/lu"
 
 function MainMenuUser(){
     const formFields = {
@@ -48,14 +51,20 @@ function MainMenuUser(){
         },
       }
     return(
-        <nav className="MainMenuUser">
-            <NavLink to="profile" end className={({isActive}) => isActive ? "activeStyle" : ""}>Profil</NavLink>
-            <NavLink to="bookings" className={({isActive}) => isActive ? "activeStyle" : ""}>Programarile mele</NavLink>
-            <NavLink to="newBooking" className={({isActive}) => isActive ? "activeStyle" : ""}>Programare noua</NavLink>
+        <nav className="MainMenuUser" id="MainMenuUser">
+            <NavLink to="profile" end className={({isActive}) => isActive ? "activeStyle" : ""}>
+              <Button icon={FaRegUserCircle} text="Profil"/>
+            </NavLink>
+            <NavLink to="bookings" className={({isActive}) => isActive ? "activeStyle" : ""}>
+              <Button icon={BsCalendar4Week} text="Programarile mele"/>
+            </NavLink>
+            <NavLink to="newBooking" className={({isActive}) => isActive ? "activeStyle" : ""}>
+              <Button icon={LuCalendarPlus} text="Programare noua"/>
+              </NavLink>
             <NavLink to="/login" className={({isActive}) => isActive ? "activeStyle" : ""}>
                 < Authenticator formFields={formFields} >
                 {({ signOut, user }) => (
-                    <button onClick={signOut}>Sign out</button>
+                    <Button  icon={BsBoxArrowInLeft} text="Sign Out" onClick={signOut}/>
                     // <NavLink to="/login" onClick={signOut}>Sign out</NavLink>
                 )}
                 </Authenticator>

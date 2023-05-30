@@ -1,5 +1,5 @@
 .slotButton{
-    background-color: aquamarine !important;
+    background-color: #D9D9D9 !important;
     border-style: solid !important;
     border-width: 1px 1px 1px 1px !important;
     border-color: black !important;
@@ -8,9 +8,9 @@
 
 
 /* The selected button */
-.css-1rjj2wg-MuiButtonBase-root-MuiToggleButton-root.Mui-selected {
+.slotButton.Mui-selected {
     color: #000000 !important;
-    background-color: rgba(47, 50, 227, 0.626) !important;
+    background-color: #34A853 !important;
 }
 
 /* The container with all buttons */

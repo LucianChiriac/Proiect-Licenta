@@ -49,7 +49,10 @@ const router = createBrowserRouter(createRoutesFromElements(
             }/>
             <Route 
               path="bookings" 
-              element={<UserBookings/>}
+              element={
+                <StepContextProvider>
+                  <UserBookings/>
+                </StepContextProvider>}
             />
             <Route path="newBooking" 
               element={

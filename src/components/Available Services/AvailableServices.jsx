@@ -1,18 +1,20 @@
 import React, { useState, useContext } from 'react';
 import "./AvailableServices.css"
-import { useLoaderData } from 'react-router-dom';
+import { Await, defer, useLoaderData } from 'react-router-dom';
 import { getAvailableServices } from '../../api/getAvailableServices';
 import ServiceBox from "./ServiceBox";
 import { multiStepContext } from "../../StepperContext.js"
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import "./ToggleButtons.css"
-export function loader(){
-    return getAvailableServices();
+
+export async function loader(){
+    const services =  await getAvailableServices();
+    return defer({services : services});
 }
 
 
 function AvailableServices(){   
-    const services = useLoaderData();
+    const services = useLoaderData().services;
     const {serviceData, setServiceData} = useContext(multiStepContext)
     console.log("Service data is")
     console.log(serviceData)
@@ -55,14 +57,7 @@ function AvailableServices(){
             })
     return (
         <div className="availableServicesContainer">
-            {/* <h3>Servicii online: </h3>
-            <div className="availableServices--Subcontainer">
-                {online}
-            </div>
-            <h3>Servicii la cabinet: </h3>
-            <div className="availableServices--Subcontainer">
-                {onsite}
-            </div> */}
+            
             <ToggleButtonGroup
                 className="toggleButtonGroup"
                 orientation="vertical"
@@ -84,17 +79,5 @@ function AvailableServices(){
     )
 }
 
-// <ToggleButtonGroup
-// className = "toggleButtonGroup"
-// orientation="vertical"
-// value={selectedSlot}
-// onChange={(event, newSlot) => {
-// setSelectedSlot(newSlot);
-// }}
-// exclusive
-// color="primary"
-// >
-//     {todaySlots}
-// </ToggleButtonGroup>
 
 export default AvailableServices;

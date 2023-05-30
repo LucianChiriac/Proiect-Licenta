@@ -15,8 +15,10 @@ import { multiStepContext } from "../../StepperContext"
 
 
 function MyDatePicker(props) {
-  
+
   const { serviceData, dateData, setDateData } = useContext(multiStepContext)
+  console.log("MyDatePicker : Service data")
+  console.log(serviceData)
   const {
       currentMonth,
       excludeDates,
