@@ -10,7 +10,7 @@
 /* The selected button */
 .slotButton.Mui-selected {
     color: #000000 !important;
-    background-color: #34A853 !important;
+    background-color: var(--active-green) !important;
 }
 
 /* The container with all buttons */

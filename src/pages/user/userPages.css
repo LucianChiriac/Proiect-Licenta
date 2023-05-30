@@ -11,7 +11,7 @@ h3{
 }
 
 .PayButton {
-    background-color: #49656e !important; 
+    background-color: var(--active-green) !important; 
     color: white !important;
     border: none !important;
     border-radius: 4px !important;
@@ -21,7 +21,7 @@ h3{
 }
   
 .PayButton:hover {
-    background-color: #45a049;
+    background-color: var(--menu-green) !important;
   }
 
 .MuiStep-root MuiStep-horizontal css-1bw0nnu-MuiStep-root{

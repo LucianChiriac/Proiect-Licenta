@@ -11,7 +11,7 @@ body {
     justify-content: space-around;
     height : 10vh;
     align-items: center;
-    background-color:#49656e;
+    background-color:var(--header-grey-blue);
     box-shadow: 0 10px 20px rgb(131, 127, 201);
   }
 

@@ -10,7 +10,7 @@
     padding-right: 30px;
     padding-top: 10vh;
     gap : 10%;
-    background-color:#078316;
+    background-color:var(--menu-green);
 }
 
 .MainMenuUser a {
@@ -23,79 +23,79 @@
 }
 
 .activeStyle{
-    background-color: #25A034 !important;
+    background-color: var(--active-green) !important;
 }
 
 .MainMenuUser a:hover {
-    background-color: #25A034;
+    background-color: var(--active-green);
     animation: backgroundTransition 0.1s linear;
 }
 
 @keyframes backgroundTransition {
     0% {
-      background: radial-gradient(circle at center, #25A034 0%, transparent 0%);
+      background: radial-gradient(circle at center, var(--active-green) 0%, transparent 0%);
     }
     5% {
-        background: radial-gradient(circle at center, #25A034 5%, transparent 5%);
+        background: radial-gradient(circle at center, var(--active-green) 5%, transparent 5%);
     }
     10% {
-        background: radial-gradient(circle at center, #25A034 10%, transparent 10%);
+        background: radial-gradient(circle at center, var(--active-green) 10%, transparent 10%);
     }
     15% {
-        background: radial-gradient(circle at center, #25A034 15%, transparent 15%);
+        background: radial-gradient(circle at center, var(--active-green) 15%, transparent 15%);
     }   
     20% {
-        background: radial-gradient(circle at center, #25A034 20%, transparent 20%);
+        background: radial-gradient(circle at center, var(--active-green) 20%, transparent 20%);
     } 
     25% {
-        background: radial-gradient(circle at center, #25A034 25%, transparent 25%);
+        background: radial-gradient(circle at center, var(--active-green) 25%, transparent 25%);
     } 
     30% {
-        background: radial-gradient(circle at center, #25A034 30%, transparent 30%);
+        background: radial-gradient(circle at center, var(--active-green) 30%, transparent 30%);
     } 
     35% {
-        background: radial-gradient(circle at center, #25A034 35%, transparent 35%);
+        background: radial-gradient(circle at center, var(--active-green) 35%, transparent 35%);
     } 
     40% {
-        background: radial-gradient(circle at center, #25A034 40%, transparent 40%);
+        background: radial-gradient(circle at center, var(--active-green) 40%, transparent 40%);
     }
     45% {
-        background: radial-gradient(circle at center, #25A034 45%, transparent 45%);
+        background: radial-gradient(circle at center, var(--active-green) 45%, transparent 45%);
     }  
     50% {
-      background: radial-gradient(circle at center, #25A034 50%, transparent 50%);
+      background: radial-gradient(circle at center, var(--active-green) 50%, transparent 50%);
     }
     55% {
-        background: radial-gradient(circle at center, #25A034 55%, transparent 55%);
+        background: radial-gradient(circle at center, var(--active-green) 55%, transparent 55%);
     }
     60% {
-        background: radial-gradient(circle at center, #25A034 60%, transparent 
+        background: radial-gradient(circle at center, var(--active-green) 60%, transparent 
         60%);
     }
     65% {
-        background: radial-gradient(circle at center, #25A034 65%, transparent 
+        background: radial-gradient(circle at center, var(--active-green) 65%, transparent 
         65%);
     }
     70% {
-        background: radial-gradient(circle at center, #25A034 70%, transparent 
+        background: radial-gradient(circle at center, var(--active-green) 70%, transparent 
         70%);
     }
     75% {
-        background: radial-gradient(circle at center, #25A034 75%, transparent 75%);
+        background: radial-gradient(circle at center, var(--active-green) 75%, transparent 75%);
     } 
     80% {
-        background: radial-gradient(circle at center, #25A034 80%, transparent 
+        background: radial-gradient(circle at center, var(--active-green) 80%, transparent 
         100%);
     }
     85% {
-        background: radial-gradient(circle at center, #25A034 85%, transparent 
+        background: radial-gradient(circle at center, var(--active-green) 85%, transparent 
         100%);
     }
     90% {
-        background: radial-gradient(circle at center, #25A034 90%, transparent 
+        background: radial-gradient(circle at center, var(--active-green) 90%, transparent 
         100%);
     }
     100% {
-      background: radial-gradient(circle at center, #25A034 100%, transparent 100%);
+      background: radial-gradient(circle at center, var(--active-green) 100%, transparent 100%);
     }
   }
