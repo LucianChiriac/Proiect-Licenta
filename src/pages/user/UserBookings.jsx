@@ -33,12 +33,12 @@ function UserBookingsPage(){
             {
                 dataLoaded ? 
                 (
-                    appointments.length > 0 ?  
+                    appointments.filter(a => a.prepaid === 1).length > 0 ?  
                     <div className=" AppointmentsPage">
-                    <div className="userPageTitle">
-                        Programarile dumneavoastra
-                    </div>
-                     <AppointmentsContainer appointments={appointments}/>
+                        <div className="userPageTitle">
+                            Programarile dumneavoastra
+                        </div>
+                        <AppointmentsContainer appointments={appointments}/>
                     </div> : 
                     <div className="userPageTitle">Nu aveti nici o programare facuta!</div>
                 ) 
