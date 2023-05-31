@@ -1,0 +1,33 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "websiteprogramariRDSconnection",
+      "env": "dev",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true
+    }
+  ],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "host",
+      "environmentVariableName": "host"
+    },
+    {
+      "cloudFormationParameterName": "user",
+      "environmentVariableName": "user"
+    },
+    {
+      "cloudFormationParameterName": "password",
+      "environmentVariableName": "password"
+    },
+    {
+      "cloudFormationParameterName": "database",
+      "environmentVariableName": "database"
+    },
+    {
+      "cloudFormationParameterName": "port",
+      "environmentVariableName": "port"
+    }
+  ]
+}

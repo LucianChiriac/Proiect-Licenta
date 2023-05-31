@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "paths": {
+    "/events": {
+      "name": "/events",
+      "lambdaFunction": "lambdaFunc",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/users": {
+      "name": "/users",
+      "lambdaFunction": "lambdaFunc",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/slots": {
+      "name": "/slots",
+      "lambdaFunction": "lambdaFunc",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/appointments": {
+      "name": "/appointments",
+      "lambdaFunction": "lambdaFunc",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/create-checkout-session": {
+      "name": "/create-checkout-session",
+      "lambdaFunction": "lambdaFunc",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/stripe-webhook": {
+      "name": "/stripe-webhook",
+      "lambdaFunction": "lambdaFunc",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
