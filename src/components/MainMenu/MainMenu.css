@@ -1,4 +1,4 @@
-.MainMenuUser{
+.MainMenu{
     /* flex: 0 0 200px; */
     width: 220px;
     position: fixed;
@@ -13,7 +13,7 @@
     background-color:var(--menu-green);
 }
 
-.MainMenuUser a {
+.MainMenu a {
     text-decoration: none;
     width: 100%;
     padding: 5px 15px 5px 15px;
@@ -26,7 +26,7 @@
     background-color: var(--active-green) !important;
 }
 
-.MainMenuUser a:hover {
+.MainMenu a:hover {
     background-color: var(--active-green);
     animation: backgroundTransition 0.1s linear;
 }

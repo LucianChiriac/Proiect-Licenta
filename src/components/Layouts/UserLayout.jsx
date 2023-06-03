@@ -1,6 +1,6 @@
 import React from "react"
 import { Outlet } from "react-router-dom"
-import MainMenuUser from "../MainMenuUser/MainMenuUser"
+import MainMenuUser from "../MainMenu/MainMenu"
 import "./UserLayout.css"
 
 export default function userLayout() {

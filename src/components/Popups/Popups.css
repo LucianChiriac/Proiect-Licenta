@@ -1,0 +1,74 @@
+.modal {
+    font-size: 14px;
+    margin: auto;
+    width: auto;
+    background-color: #ecfffb;
+    border: 2px solid rgba(13, 42, 20, 0.875);
+    border-radius: 25px;
+    padding: 20px 30px 20px 30px;
+}
+
+.calendarEventPopup{
+    display: flex;
+    flex-direction: column;
+    width : 125%;
+}
+
+.calendarEventPopup > .row{
+    display: flex;
+    flex-direction: row;
+    gap : 20px
+}
+
+.calendarEventPopup > .row > .col:first-of-type{
+    width : 40%;
+}
+
+.calendarEventPopup > .row > .col:nth-of-type(2){
+    width : 60%;
+}
+
+.col > .prepaid{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap : 10px;
+}
+
+.greenIcon{
+    color: green;
+    font-size: 14px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+.redIcon{
+    color: red;
+    font-size: 14px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
+.modalButtons {
+    padding-top: 25px;
+    justify-content: center;
+}
+.modalButtons > .col{
+    width : auto !important;
+}
+
+.closeX {
+    position: absolute;
+    top: 15px;
+    right: calc(-25% + 30px);
+    transform: translateX(100%);
+  }
+
+  .afterModalMessage{
+    width: 140%;
+    height: 180%;
+  }
+  .warning{
+    font-size: 16px;
+    font-weight: 800;
+    color: rgb(202, 13, 13);
+  }

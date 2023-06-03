@@ -20,31 +20,34 @@
     
 }
 
-input[type=text] {
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+.Appointment_Summary > .row{
+    display: flex;
+    align-items: center;
+}
+.Appointment_Summary > .row > .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+.Appointment_Summary > .row > .col-75 {
+    margin:auto;
+    float: left;
+    width: 75%;
+  }
+  
+
+  .Appointment_Summary > .row > .col-75 > input[type=text] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
   }
-
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-  }
-
-.col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-  }
-  
-.col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-  }
-  
 .row::after {
     content: "";
     display: table;

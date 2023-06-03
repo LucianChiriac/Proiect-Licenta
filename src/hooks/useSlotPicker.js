@@ -15,7 +15,7 @@ function useSlotPicker(props){
     const bookedSlots = props.bookedSlots; // slots booked in calendar
     const [currentMonth, setCurrentMonth] = useState({
         firstDay : format(addDays(new Date(),minDate), 'yyyy-MM-dd'),
-        lastDay : format(lastDayOfMonth(new Date()), "yyyy-MM-dd"),
+        lastDay : format(lastDayOfMonth(addDays(new Date(),minDate)), "yyyy-MM-dd"),
       });
 
     const [monthInformation, setMonthInformation] = useState([])
@@ -25,7 +25,7 @@ function useSlotPicker(props){
     const [selectedDate, setSelectedDate] = useState(null)
     const [selectedSlot, setSelectedSlot] = useState(null)
     const [error, setError] = useState(null);
-    //const [loading, setLoading] = useState(true);
+    const [dataLoaded, setDataLoaded] = useState(false);
     
     useEffect(function() {
       try {
@@ -39,28 +39,31 @@ function useSlotPicker(props){
               let excludeDates = getUnavailableDates(result);
               let firstAvailableDay = getFirstAvailableDate(result);
               let resultWBtn = result.map( (obj) => {
-              let buttons = obj.availableIntervals.map((interval, index) => (
-                <ToggleButton
-                    className = "slotButton" 
-                    value={interval.displayValue} 
-                    key={index}
-                    color="success">
-                    {interval.displayValue}
-                </ToggleButton>
-                ))
+                let buttons = obj.availableIntervals.map((interval, index) => (
+                  <ToggleButton
+                      className = "slotButton" 
+                      value={interval.displayValue} 
+                      key={index}
+                      color="success">
+                      {interval.displayValue}
+                  </ToggleButton>
+                  ))
             
-            return ({...obj, buttons : [...buttons]});
+                 return ({...obj, buttons : [...buttons]});
               }) 
               setMonthInformation(resultWBtn);
               setExcludeDates(excludeDates);
               setFirstAvailableDate(firstAvailableDay);
               setSelectedDate(firstAvailableDay);
+              setDataLoaded(true);
             });
       
       } catch (error) {
         console.log("Error is");
         console.log(error);
+        setDataLoaded(true);
       }
+      
     }, [currentMonth.firstDay]);
 
     useEffect(() => {
@@ -114,6 +117,7 @@ function useSlotPicker(props){
     },[selectedSlot])
 
     function handleMonthNavigation(date){
+        setDataLoaded(false);
         setCurrentMonth({
           firstDay : getMonth(new Date()) === getMonth(date) ?  format(new Date(), 'yyyy-MM-dd') : format(new Date(date), 'yyyy-MM-01'),
           lastDay : format(lastDayOfMonth(new Date(date)), "yyyy-MM-dd")
@@ -144,6 +148,7 @@ function useSlotPicker(props){
         intervalButtons,
         selectedDate,
         selectedSlot,
+        dataLoaded,
         error,
         //loading,
         formatSelectedDate,

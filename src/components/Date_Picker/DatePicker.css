@@ -10,12 +10,12 @@
   flex-direction: column;
   margin-top: 20px;
   gap: 20px;
-  width: 100%;
+  width: 50%;
 }
 
 .calendar-col {
   display: flex;
-  align-items: center !important;
+  padding-top: 160px;
   padding-left: 20px !important;
 }
 

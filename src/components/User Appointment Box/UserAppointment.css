@@ -23,8 +23,19 @@ body{
     align-items: center;
 }
 
-.singleAppointmentContainer--firstRow > div {
-    max-width: 25%;
+.singleAppointmentContainer--firstRow > :first-child {
+    width: 35%;
+    max-height: 100%;
+    overflow: hidden;
+}
+.singleAppointmentContainer--firstRow > :nth-child(2) {
+    width: 15%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.singleAppointmentContainer--firstRow > :nth-child(n+3) {
+    width: 25%;
     max-height: 100%;
     overflow: hidden;
 }

@@ -74,12 +74,16 @@ function Login(){
   const { route } = useAuthenticator( (context) => [context.route])
   const location = useLocation();
   const navigate = useNavigate();
+  const { user } = useAuthenticator((context) => [context.user]);
   let from = location.state?.from?.pathname || '/';
-
+     
   useEffect(() =>{
     if (route === 'authenticated'){
       if (from === "/") // from root
-        navigate("/user")
+      {
+        const userGroup = user.signInUserSession.accessToken.payload["cognito:groups"][0]; 
+        userGroup === "registered" ?  navigate("/user") : navigate("/admin")
+      }
       else
         navigate(from, {replace: true})
     }

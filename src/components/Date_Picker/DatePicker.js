@@ -8,7 +8,7 @@ import { isWeekday} from "./utils.js"
 import locale from "./DateLocale.js"
 import useSlotPicker from "../../hooks/useSlotPicker.js";
 import { useLoaderData } from "react-router-dom"
-// to do
+import { InfinitySpin } from  'react-loader-spinner'
 import SlotPicker from "../../hooks/---SlotPicker.js"
 import { multiStepContext } from "../../StepperContext"
 //
@@ -25,6 +25,7 @@ function MyDatePicker(props) {
       intervalButtons,
       selectedDate,
       selectedSlot,
+      dataLoaded,
       error,
       //loading,
       formatSelectedDate,
@@ -56,8 +57,10 @@ function MyDatePicker(props) {
   }
 
     return (
-      <>
-          <div className="date-slot-picker">
+      <>  
+      {
+        dataLoaded ?
+        <div className="date-slot-picker">
             <div className="calendar-col">
               <DatePicker
                 selected={selectedDate}
@@ -91,6 +94,18 @@ function MyDatePicker(props) {
               </div>
             </div>
           </div>
+        :
+        <div className="loadingScreen">
+                        <InfinitySpin 
+                            width='200'
+                            color="#4fa94d"
+                        />
+                        <div className="loadingMessage">
+                            Pagina se incarca...
+                       </div>
+        </div> 
+      }
+          
       </>
         
         

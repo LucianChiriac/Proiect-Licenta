@@ -6,6 +6,10 @@
     overflow: clip;
     white-space: nowrap;
 }
+.ServiceBox-data{
+    display: flex;
+    flex-direction: row;
+}
 
 .ServiceBox-data:first-child{
     font-weight: 900;
@@ -13,4 +17,12 @@
 
 .ServiceBox-data:not(first-child){
     text-align: left;
+}
+.leftAlign{
+    width: 40%;
+}
+
+.rightAlign{
+    width : 40%;
+    align-items:end;
 }

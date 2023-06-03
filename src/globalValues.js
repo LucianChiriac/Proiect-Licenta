@@ -5,4 +5,7 @@ const maxDate = 90; // user can only schedule up until 90 days in the future
 const dayStart = 8;
 const dayEnd = 18;
 
-export {maxTimeReschedule, minDate, maxDate, dayStart, dayEnd}
+const slotMinTime = "08:00:00";
+const slotMaxTime = "18:00:00";
+
+export {maxTimeReschedule, minDate, maxDate, dayStart, dayEnd, slotMaxTime, slotMinTime}

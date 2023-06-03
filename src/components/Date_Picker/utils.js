@@ -3,6 +3,8 @@ import {eachDayOfInterval, isSameDay, getHours, getMinutes, startOfDay, addMinut
 
 
 function processIncomingSlots(allSlotArray, eventDuration, bookedSlots, firstDay, lastDay, startDay, endDay) {
+    console.log("Inside processing function:")
+    console.log(firstDay, lastDay, startDay, endDay)
     let result  = 
             eachDayOfInterval({start : new Date(firstDay), end : new Date(lastDay)}) // returns array of days between start and end
             .map( day => {

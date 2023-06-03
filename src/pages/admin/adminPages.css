@@ -1,0 +1,24 @@
+.fc{
+    margin: 30px 5vw 30px 5vw;
+}
+
+.eventFrame{
+    display: flex;
+    flex-direction: column;
+    justify-content:  center ;
+}
+.eventFrameTitle{
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    justify-content: center;
+}
+.videoIcon{
+    color : red;
+    vertical-align:middle;
+}
+
+.eventInterval{
+    text-align: center;
+}
+

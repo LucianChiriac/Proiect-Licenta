@@ -3,13 +3,19 @@ import { useNavigate, NavLink } from 'react-router-dom'
 import { useAuthenticator, Button, Heading, View } from '@aws-amplify/ui-react';
 import "./Header.css"
 
+/*
+const { user } = useAuthenticator((context) => [context.user]);
+const userGroup = user.signInUserSession.accessToken.payload["cognito:groups"][0];
+ */
+
 function Header(){
 
     const { route, signOut } = useAuthenticator((context) => [
         context.route,
         context.signOut,
     ]);
-    
+    const { user } = useAuthenticator((context) => [context.user]);
+    const userGroup = user?.signInUserSession?.accessToken.payload["cognito:groups"][0];
     const navigate = useNavigate();
 
     function logOut(){
@@ -32,7 +38,7 @@ function Header(){
                 {route !== 'authenticated' ? (
                     <NavLink to="/login" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Sign in</NavLink>
                 ) : (
-                    <NavLink to="/user" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Profil</NavLink>
+                    <NavLink to={userGroup==="registered" ? "/user" : "/admin"} className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Profil</NavLink>
                     // <Button onClick={() => logOut()}>Logout</Button>
                 )}
             </nav>

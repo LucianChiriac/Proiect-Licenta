@@ -46,7 +46,8 @@ h3{
 
 
 .userPageTitle{
-    width : 100%;
+    width : calc(100% - 220px);
+    height: calc(100% - 15vh);
     font-size: 2em;
     margin-left: 10%;
     padding-top: 10vh;
@@ -55,4 +56,79 @@ h3{
 
 .profilePageContainer> h1{
     margin: 0;
+}
+
+.loadingScreen{
+    display: flex;
+    flex-direction: column;
+    width : calc(100% - 220px);
+    height: calc(100% - 15vh);
+    font-size: 2em;
+    margin:auto;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    align-items: center;
+    gap: 30px;
+}
+
+.profilePageContainer{
+    width: 100%;
+    padding: 5vh 10vh 5vh 10vh;
+}
+
+.profileForm{
+    padding-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.row.profile{
+    margin-top: auto !important;
+    margin-bottom: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.row.profile > .col-25{
+    float: left;
+    width: 20%;
+    text-align : end;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.row.profile > .col-75  {
+    float: left;
+    width : 75%;
+    max-width: 500px;
+    min-width: 250px;
+    margin-top: auto !important;
+    margin-bottom: auto; 
+}
+
+.row.profile > .col-75 > :is(input[type="text"],input[type="password"]) {
+    width: 100%;
+    padding: 8px 8px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    resize: vertical;
+  }
+
+.center-profile{
+text-align: center;
+}
+
+.col-25 > input[type="checkbox"] {
+    height: 25px;
+    width : 25px;
+    background-color: var(--menu-green);
+  }
+
+.profileForm >:nth-last-child(2){
+    padding-top: 15px;
+}
+
+.profileForm > :last-child{
+    justify-content: center;
 }
