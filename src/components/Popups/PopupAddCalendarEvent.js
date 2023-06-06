@@ -16,6 +16,10 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
+import Autocomplete from "@mui/material/Autocomplete";
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
+import ClearIcon from "@mui/icons-material/Clear";
 import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 //
 
@@ -28,15 +32,16 @@ function PopupAddCalendarEvent() {
   const [reloadPage, setReloadPage] = useState(false);
   const [parentPopupVisible, setParentPopupVisible] = useState(true);
 
-  const [phone, setPhone] = useState();
-  const [selectedService, setSelectedService] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [familyName, setFamilyName] = useState(null);
-  const [givenName, setGivenName] = useState(null);
+  const [phone, setPhone] = useState("");
+  const [selectedService, setSelectedService] = useState("");
+  const [email, setEmail] = useState("");
+  const [familyName, setFamilyName] = useState("");
+  const [givenName, setGivenName] = useState("");
   const [prepaid, setPrepaid] = useState(false);
-
+  const [nameAutoOptions, setNameAutoOptions] = useState([]);
   const [emailError, setEmailError] = useState(false);
   const [isPhoneValid, setIsPhoneValid] = useState(true);
+  const [selectedUser, setSelectedUser] = useState(null);
   useEffect(() => {
     const parentContainer = document.getElementById("calendarAddEventPopup");
     parentPopupVisible
@@ -44,8 +49,8 @@ function PopupAddCalendarEvent() {
       : (parentContainer.style.visibility = "hidden");
   }, [parentPopupVisible]);
 
-  console.log("all users are");
-  console.log(allUsers);
+  // console.log("all users are");
+  // console.log(allUsers);
   function handleSubmit(e) {
     e.preventDefault();
     console.log("submitting form data");
@@ -58,56 +63,91 @@ function PopupAddCalendarEvent() {
     console.log(selectedService);
     console.log(prepaid);
     console.log("end");
-    console.log(e.target.checkValidity());
-    fetch(
-      `https://zknyo7t9m3.execute-api.eu-west-3.amazonaws.com/dev/appointments/`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          serviceData: selectedService,
-          dateData: {
-            date: popupData.startDate,
-            slot: format(popupData.startDate, "HH:mm:ss"),
-          },
-          userData: {
-            userGroup: "admin",
-            userId: null,
-          },
-        }),
-      }
-    )
-      .then(async (res) => {
-        if (res.ok) {
-          return await res.json();
+    console.log(selectedUser);
+    if (
+      selectedUser === null &&
+      allUsers.filter((user) => user.phone === phone.split(" ").join(""))
+        .length > 0
+    ) {
+      console.log("Numarul de telefon este deja asociat unui alt client.");
+    } else
+      fetch(
+        `https://zknyo7t9m3.execute-api.eu-west-3.amazonaws.com/dev/appointments/`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            serviceData: selectedService,
+            dateData: {
+              date: popupData.startDate,
+              slot: format(popupData.startDate, "HH:mm:ss"),
+            },
+            userData: {
+              userGroup: "admin",
+              forUserType: selectedUser ? selectedUser.type : null,
+              userId: selectedUser ? selectedUser.id : null,
+              ...(selectedUser &&
+                selectedUser.type !== "registered" && {
+                  forUserFamilyName: familyName,
+                  forUserGivenName: givenName,
+                  forUserEmail: email,
+                  forUserPhone: phone.split(" ").join(""),
+                }),
+              ...(selectedUser === null && {
+                forUserFamilyName: familyName,
+                forUserGivenName: givenName,
+                forUserEmail: email,
+                forUserPhone: phone.split(" ").join(""),
+              }),
+            },
+          }),
         }
-        return await res.json().then((json) => {
-          Promise.reject(json);
-          throw json;
+      )
+        .then(async (res) => {
+          if (res.ok) {
+            return await res.json();
+          }
+          return await res.json().then((json) => {
+            Promise.reject(json);
+            throw json;
+          });
+        })
+        .catch((err) => {
+          console.error(err);
+          console.log("I got this error:");
+          console.log(err);
+          setErrorMessage(err.messageUser);
+        })
+        .then((res) => {
+          setOpenPopup(0);
+        })
+        // .then(({ url }) => {
+        //   window.location = url;
+        // })
+        .catch((err) => {
+          console.error(err);
+          setErrorMessage(err.messageUser);
         });
-      })
-      .catch((err) => {
-        console.error(err);
-        console.log("I got this error:");
-        console.log(err);
-        setErrorMessage(err.messageUser);
-      })
-      .then((res) => {
-        setOpenPopup(0);
-      })
-      // .then(({ url }) => {
-      //   window.location = url;
-      // })
-      .catch((err) => {
-        console.error(err);
-        setErrorMessage(err.messageUser);
-      });
   }
-  const handleFamilyNameChange = (event) => {
-    setFamilyName(event.target.value);
+  const handleFamilyNameChange = (value) => {
+    console.log("I get called");
+    if (typeof value === "string") {
+      console.log("typing value");
+      // If the value is a string (typed by the user), set only the familyName
+      setFamilyName(value);
+    } else if (typeof value === "object" && value !== null) {
+      // If the value is an object (selected from the dropdown), set familyName, givenName, phone, and email
+      console.log("SELECTED VALUE");
+      console.log(value);
+      setSelectedUser(value);
+      setFamilyName(value.family_name);
+      setGivenName(value.given_name);
+      setPhone(value.phone);
+      setEmail(value.email);
+    }
   };
 
-  const handleGivenNameChange = (event) => {
+  const handleGivenNameChange = (event, value) => {
     setGivenName(event.target.value);
   };
 
@@ -131,8 +171,16 @@ function PopupAddCalendarEvent() {
     setPrepaid(event.target.checked);
   };
 
-  console.log("Inside AddCalendar, this is what I get: ");
-  console.log(popupData);
+  const handleClear = () => {
+    console.log("I'm clearing");
+    setGivenName("");
+    setFamilyName("");
+    setEmail("");
+    setPhone("");
+    setSelectedUser(null);
+  };
+  // console.log("Inside AddCalendar, this is what I get: ");
+  // console.log(popupData);
   return (
     <Popup
       position="right center"
@@ -160,12 +208,57 @@ function PopupAddCalendarEvent() {
                   <InputLabel id="input-name">Nume</InputLabel>
                 </div>
                 <div className="col">
-                  <TextField
-                    required
+                  <Autocomplete
                     id="input-name"
-                    label="Numele de familie"
-                    defaultValue=""
-                    onChange={handleFamilyNameChange}
+                    options={nameAutoOptions}
+                    freeSolo
+                    getOptionLabel={(user) =>
+                      selectedUser === user
+                        ? user.family_name
+                        : `${user.family_name}, ${user.given_name}`
+                    }
+                    disabled={
+                      selectedUser ? true : false // && selectedUser.type === "registered"
+                    }
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        required
+                        label="Numele de familie"
+                        value={email}
+                        onChange={(e) => handleFamilyNameChange(e.target.value)}
+                        InputProps={{
+                          ...params.InputProps,
+                          endAdornment: (
+                            <>
+                              {params.InputProps.endAdornment}
+                              {selectedUser && (
+                                <InputAdornment position="end">
+                                  <IconButton
+                                    aria-label="Custom Button"
+                                    onClick={handleClear}
+                                  >
+                                    <ClearIcon color="primary" />
+                                  </IconButton>
+                                </InputAdornment>
+                              )}
+                            </>
+                          ),
+                        }}
+                      />
+                    )}
+                    onChange={(e, value) => {
+                      handleFamilyNameChange(value);
+                      setSelectedUser(value);
+                    }}
+                    onInputChange={(event, value) => {
+                      const filteredUsers = allUsers.filter((user) =>
+                        `${user.family_name} ${user.given_name}`
+                          .toLowerCase()
+                          .includes(value.toLowerCase())
+                      );
+                      setNameAutoOptions(filteredUsers);
+                    }}
                   />
                 </div>
               </div>
@@ -178,8 +271,11 @@ function PopupAddCalendarEvent() {
                     required
                     id="input-givenName"
                     label="Prenumele pacientului"
-                    defaultValue=""
+                    value={givenName}
                     onChange={handleGivenNameChange}
+                    disabled={
+                      selectedUser ? true : false // && selectedUser.type === "registered"
+                    }
                   />
                 </div>
               </div>
@@ -193,10 +289,13 @@ function PopupAddCalendarEvent() {
                     id="input-email"
                     type={"email"}
                     label="Email pacient"
-                    defaultValue=""
+                    value={email}
                     error={emailError}
                     onChange={handleEmailChange}
                     helperText={emailError ? "Invalid email" : ""}
+                    disabled={
+                      selectedUser ? true : false // && selectedUser.type === "registered"
+                    }
                   />
                 </div>
               </div>
@@ -213,10 +312,21 @@ function PopupAddCalendarEvent() {
                     forceCallingCode={true}
                     value={phone}
                     onChange={handlePhoneChange}
+                    disabled={
+                      selectedUser ? true : false // && selectedUser.type === "registered"
+                    }
                   />
                   {!isPhoneValid && (
                     <div className="phone-invalid-message">Numar invalid</div>
                   )}
+                  {selectedUser === null &&
+                    allUsers.filter(
+                      (user) => user.phone === phone.split(" ").join("")
+                    ).length > 0 && (
+                      <div className="phone-invalid-message">
+                        Numar asociat altui client
+                      </div>
+                    )}
                 </div>
               </div>
               <div className="row">
@@ -231,7 +341,7 @@ function PopupAddCalendarEvent() {
                       id="tip-sedinta"
                       label="Selectati tipul sedintei"
                       onChange={handleServiceChange}
-                      defaultValue=""
+                      value={selectedService}
                     >
                       {popupData.bookableServices.map((service, index) => (
                         <MenuItem key={index} value={service}>
@@ -280,87 +390,3 @@ function PopupAddCalendarEvent() {
 }
 
 export default PopupAddCalendarEvent;
-
-// <form
-//             onSubmit={handleSubmit}
-//             className="addAppointmentForm--admin"
-//             id="addAppointmentForm--admin"
-//           >
-//             <div className="row">
-//               <div className="col">Datele programarii</div>
-//             </div>
-//             <div className="row">
-//               <div className="col">
-//                 <label htmlFor="Nume">Nume</label>
-//               </div>
-//               <div className="col">
-//                 <input
-//                   type="text"
-//                   id="Nume"
-//                   name="family_name"
-//                   placeholder="Numele de familie al pacientului"
-//                 />
-//               </div>
-//             </div>
-//             <div className="row">
-//               <div className="col">
-//                 <label htmlFor="Prenume">Prenume</label>
-//               </div>
-//               <div className="col">
-//                 <input
-//                   type="text"
-//                   id="Prenume"
-//                   name="given_name"
-//                   placeholder="Prenumele pacientului"
-//                 />
-//               </div>
-//             </div>
-//             <div className="row">
-//               <div className="col">
-//                 <label htmlFor="Email">Email</label>
-//               </div>
-//               <div className="col">
-//                 <input
-//                   type="email"
-//                   id="Email"
-//                   name="Email"
-//                   placeholder="Adresa email a pacientului"
-//                   pattern=".+@.+\..+"
-//                   required
-//                 />
-//               </div>
-//             </div>
-//             <div className="row">
-//               <div className="col">
-//                 <label htmlFor="Phone">Telefon</label>
-//               </div>
-//               <div className="col">
-//                 <PhoneInput
-//                   defaultCountry="RO"
-//                   // value={value}
-//                   placeholder="ex: 0755 555 555"
-//                   onChange={setPhone}
-//                 />
-//               </div>
-//             </div>
-//             <div className="row">
-//               <div className="col">
-//                 <label htmlFor="TipSedinta">Tip sedinta </label>
-//               </div>
-//               <div className="col">
-//                 <select name="TipSedinta" id="TipSedinta" required>
-//                   <option value=""> --- Selectati tipul sedintei ---</option>
-//                   {popupData.bookableServices.map((service) => (
-//                     <option key={service.id} value={service.id}>
-//                       {service.name}{" "}
-//                       {service.location === "online" && <MdVideoCameraFront />}
-//                     </option>
-//                   ))}
-//                 </select>
-//               </div>
-//             </div>
-//             <div className="row">
-//               <div className="col">Preplatit:</div>
-//               <div className="col"></div>
-//             </div>
-//           </form>

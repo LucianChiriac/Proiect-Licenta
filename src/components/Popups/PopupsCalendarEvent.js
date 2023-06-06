@@ -47,7 +47,7 @@ function PopupCalendarEvent() {
     else
       setResponse(
         <div>
-          {popupData.event._def.extendedProps.allProps.prepaid && (
+          {popupData.event._def.extendedProps.allProps.prepaid === 1 && (
             <div className="warning">
               Atentie! Aceasta programare a fost pre-platita!
             </div>
@@ -61,6 +61,7 @@ function PopupCalendarEvent() {
     console.log("update request");
     console.log(serviceData, dateData);
     setResponse("Loading...");
+    setConfirmButton(false);
     fetch(
       `https://zknyo7t9m3.execute-api.eu-west-3.amazonaws.com/dev/appointments`,
       {
@@ -77,7 +78,6 @@ function PopupCalendarEvent() {
         if (res.ok) {
           setResponse("Sedinta a fost reprogramata cu success!");
           setReloadPage(true);
-          setConfirmButton(false);
           return await res.json();
         }
         setResponse(
@@ -104,6 +104,7 @@ function PopupCalendarEvent() {
   }
   function sendDeleteRequest() {
     setResponse("Loading...");
+    setConfirmButton(false);
     fetch(
       `https://zknyo7t9m3.execute-api.eu-west-3.amazonaws.com/dev/appointments`,
       {
@@ -119,7 +120,6 @@ function PopupCalendarEvent() {
         if (res.ok) {
           setResponse("Sedinta a fost anulata cu success!");
           setReloadPage(true);
-          setConfirmButton(false);
           return await res.json();
         }
         setResponse(
@@ -247,15 +247,17 @@ function PopupCalendarEvent() {
                         </button>
                       )}
 
-                      <button
-                        className="greenButton noFloat"
-                        onClick={() => {
-                          console.log("modal closed ");
-                          close();
-                        }}
-                      >
-                        Inchide
-                      </button>
+                      {response !== "Loading..." && (
+                        <button
+                          className="greenButton noFloat"
+                          onClick={() => {
+                            console.log("modal closed ");
+                            close();
+                          }}
+                        >
+                          Inchide
+                        </button>
+                      )}
                     </div>
                   </div>
                 )}
@@ -296,16 +298,17 @@ function PopupCalendarEvent() {
                           Confirma
                         </button>
                       )}
-
-                      <button
-                        className="greenButton noFloat"
-                        onClick={() => {
-                          console.log("modal closed ");
-                          close();
-                        }}
-                      >
-                        Inchide
-                      </button>
+                      {response !== "Loading..." && (
+                        <button
+                          className="greenButton noFloat"
+                          onClick={() => {
+                            console.log("modal closed ");
+                            close();
+                          }}
+                        >
+                          Inchide
+                        </button>
+                      )}
                     </div>
                   </div>
                 )}

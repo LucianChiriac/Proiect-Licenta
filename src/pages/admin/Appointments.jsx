@@ -124,14 +124,15 @@ function Appointments(){
           // case where the entire day has been selected; usefull for blocking intervals in a day
         } else {
           // only one slot selected, pass to selectBehaviour function
-          selectBehaviour(
-            {
-              start: selectInfo.date,
-              end: addHours(selectInfo.date, 1),
-            },
-            allServices,
-            eventsRef
-          );
+          if (compareAsc(selectInfo.date, new Date()) > 0)
+            selectBehaviour(
+              {
+                start: selectInfo.date,
+                end: addHours(selectInfo.date, 1),
+              },
+              allServices,
+              eventsRef
+            );
         }
         return true;
       }
