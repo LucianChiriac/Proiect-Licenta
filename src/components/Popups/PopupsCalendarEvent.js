@@ -31,7 +31,7 @@ function PopupCalendarEvent() {
   }, [parentPopupVisible]);
 
   function setState(datepicker = true) {
-    setOpenPopup(true);
+    setOpenPopup(1);
     setReloadPage(false);
     setConfirmButton(true);
     console.log("inside setState");
@@ -150,16 +150,23 @@ function PopupCalendarEvent() {
   return (
     <Popup
       position="right center"
-      open={openPopup}
+      open={openPopup === 1}
       onClose={() => {
-        setOpenPopup(false);
+        setOpenPopup(0);
+        setParentPopupVisible(false);
       }}
       closeOnDocumentClick={false}
       modal
     >
       {(close) => (
         <div className="calendarEventPopup modal" id="calendarEventPopup">
-          <button className="greenButton closeX" onClick={close}>
+          <button
+            className="greenButton closeX"
+            onClick={() => {
+              setOpenPopup(0);
+              close();
+            }}
+          >
             &times;
           </button>
           <div className="row">
@@ -213,7 +220,7 @@ function PopupCalendarEvent() {
                   setParentPopupVisible(false); //
                 }}
                 onClose={() => {
-                  setOpenPopup(false);
+                  setOpenPopup(0);
                   setParentPopupVisible(true);
                   if (reloadPage) {
                     window.location.reload(true);
@@ -264,7 +271,7 @@ function PopupCalendarEvent() {
                   setParentPopupVisible(false);
                 }}
                 onClose={() => {
-                  setOpenPopup(false);
+                  setOpenPopup(0);
                   setParentPopupVisible(true);
                   if (reloadPage) {
                     window.location.reload(true);

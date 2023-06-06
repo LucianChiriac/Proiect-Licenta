@@ -1,15 +1,30 @@
 import React, { useState, useEffect } from "react";
-
+import { getAvailableServices } from "./api/getAvailableServices";
+import { getAllUsers } from "./api/getAllUsers";
 export const multiStepContext = React.createContext();
 
 function CalendarContextProvider({ children }) {
   const [showPopup, setShowPopup] = useState(false);
   const [popupData, setPopupData] = useState(null);
   const [openPopup, setOpenPopup] = useState(false);
+  const [allServices, setAllServices] = useState(null);
+  const [allUsers, setAllUsers] = useState(null);
 
   useEffect(() => {
-    console.log(`In context, openPopup has changed to ${openPopup}`);
-  }, [openPopup]);
+    const fetchData = async () => {
+      try {
+        const services = await getAvailableServices();
+        const users = await getAllUsers();
+        setAllServices(services);
+        setAllUsers(users);
+      } catch (error) {
+        console.log("Error fetching services:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <multiStepContext.Provider
@@ -20,6 +35,8 @@ function CalendarContextProvider({ children }) {
           setPopupData,
           openPopup,
           setOpenPopup,
+          allServices,
+          allUsers,
         }}
       >
         {children}

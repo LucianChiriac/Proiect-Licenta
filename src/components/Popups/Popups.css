@@ -8,24 +8,42 @@
     padding: 20px 30px 20px 30px;
 }
 
-.calendarEventPopup{
+.calendarEventPopup {
     display: flex;
     flex-direction: column;
     width : 125%;
 }
 
-.calendarEventPopup > .row{
+.calendarEventPopup > .row, .calendarAddEventPopup > .row{
     display: flex;
     flex-direction: row;
     gap : 20px
 }
-
-.calendarEventPopup > .row > .col:first-of-type{
+.calendarAddEventPopup .title{
+    justify-content: center;
+    padding-bottom: 30px;
+    font-size: 2em;
+}
+.calendarEventPopup > .row > .col:first-of-type,
+.calendarAddEventPopup > .row >.col:first-of-type{
     width : 40%;
 }
 
-.calendarEventPopup > .row > .col:nth-of-type(2){
+.calendarEventPopup > .row > .col:nth-of-type(2),
+.calendarAddEventPopup > .row > .col:nth-of-type(2){
     width : 60%;
+}
+
+.calendarAddEventPopup >.row:last-of-type{
+    justify-content: space-evenly;
+    padding-top: 5%;
+    font-size: 1rem;
+}
+.calendarAddEventPopup >.row:last-of-type::after{
+    display: none;
+}
+.calendarAddEventPopup >.row:last-of-type >.col{
+    width: auto;
 }
 
 .col > .prepaid{
@@ -72,3 +90,24 @@
     font-weight: 800;
     color: rgb(202, 13, 13);
   }
+
+  .phone-invalid-input {
+    border-style: solid !important;
+    border-width: 2px !important;
+    border-color:rgb(202, 13, 13) !important;
+  }
+  
+  .phone-invalid-message{
+    color: red !important;
+    float:inline-end;
+  }
+
+  .calendarAddEventPopup{
+    display: flex;
+    flex-direction: column;
+    width : 125%;
+}
+
+.formAdminAddCalendar .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 100%;
+}
