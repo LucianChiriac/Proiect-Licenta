@@ -107,7 +107,16 @@
     flex-direction: column;
     width : 125%;
 }
+.calendarEventPopup > .row:last-of-type{
+    padding-top: 10px;
+}
 
 .formAdminAddCalendar .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
     width: 100%;
+}
+
+.whatsappLogo{
+    width: 3em;
+    height: 3em;
+    margin: auto !important;
 }

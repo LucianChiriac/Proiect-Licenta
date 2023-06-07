@@ -24,8 +24,15 @@ import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 //
 
 function PopupAddCalendarEvent() {
-  const { openPopup, setOpenPopup, popupData, setPopupData, allUsers } =
-    useContext(CalendarContext);
+  const {
+    openPopup,
+    setOpenPopup,
+    popupData,
+    setPopupData,
+    allUsers,
+    refetchData,
+    setRefetchData,
+  } = useContext(CalendarContext);
   const [errorMessage, setErrorMessage] = useState(null);
   const [response, setResponse] = useState(null);
   const [confirmButton, setConfirmButton] = useState(true);
@@ -105,6 +112,7 @@ function PopupAddCalendarEvent() {
       )
         .then(async (res) => {
           if (res.ok) {
+            setRefetchData(true);
             return await res.json();
           }
           return await res.json().then((json) => {
@@ -121,9 +129,6 @@ function PopupAddCalendarEvent() {
         .then((res) => {
           setOpenPopup(0);
         })
-        // .then(({ url }) => {
-        //   window.location = url;
-        // })
         .catch((err) => {
           console.error(err);
           setErrorMessage(err.messageUser);

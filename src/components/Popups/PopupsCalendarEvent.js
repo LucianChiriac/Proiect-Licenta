@@ -4,17 +4,20 @@ import { multiStepContext as CalendarContext } from "../../CalendarContext";
 import { multiStepContext as DatepickerStepContext } from "../../StepperContext";
 import Datepicker from "../Date_Picker/DatePicker";
 import { getJustTime } from "../../functions/dateManipulation";
-import {
-  BsFillCheckCircleFill,
-  BsFillXCircleFill,
-  BsWhatsapp,
-} from "react-icons/bs";
+import { BsFillCheckCircleFill, BsFillXCircleFill } from "react-icons/bs";
 import { MdVideoCameraFront } from "react-icons/md";
 import "./Popups.css";
+import whatsappLogo from "../../assets/WhatsApp.svg";
 
 function PopupCalendarEvent() {
-  const { openPopup, setOpenPopup, popupData, setPopupData } =
-    useContext(CalendarContext);
+  const {
+    openPopup,
+    setOpenPopup,
+    popupData,
+    setPopupData,
+    refetchData,
+    setRefetchData,
+  } = useContext(CalendarContext);
   const { serviceData, setServiceData, dateData } = useContext(
     DatepickerStepContext
   );
@@ -77,13 +80,14 @@ function PopupCalendarEvent() {
         console.log(res);
         if (res.ok) {
           setResponse("Sedinta a fost reprogramata cu success!");
-          setReloadPage(true);
+          //setReloadPage(true);
+          setRefetchData(true);
           return await res.json();
         }
         setResponse(
           "Reprogramarea a esuat! Incercati din nou sau contactati administratorul"
         );
-        setReloadPage(true);
+        //setReloadPage(true);
         setConfirmButton(false);
         return await res.json().then((json) => {
           console.log(json);
@@ -119,13 +123,15 @@ function PopupCalendarEvent() {
         console.log(res);
         if (res.ok) {
           setResponse("Sedinta a fost anulata cu success!");
-          setReloadPage(true);
+          //setReloadPage(true);
+          setRefetchData(true);
           return await res.json();
         }
         setResponse(
           "Anularea sedintei a esuat! Incercati din nou sau contactati administratorul"
         );
-        setReloadPage(true);
+        //setReloadPage(true);
+        setRefetchData(true);
         setConfirmButton(false);
         return await res.json().then((json) => {
           console.log(json);
@@ -317,7 +323,18 @@ function PopupCalendarEvent() {
           </div>
           <div className="row modalButtons">
             <div className="col">
-              <BsWhatsapp />
+              <a
+                aria-label="Chat on WhatsApp"
+                href={`https://wa.me/${popupData.event._def.extendedProps.allProps.phone}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="whatsappLogo"
+                  src={whatsappLogo}
+                  alt="whatsapp logo"
+                />
+              </a>
             </div>
           </div>
 

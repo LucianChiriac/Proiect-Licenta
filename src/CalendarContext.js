@@ -9,6 +9,7 @@ function CalendarContextProvider({ children }) {
   const [openPopup, setOpenPopup] = useState(false);
   const [allServices, setAllServices] = useState(null);
   const [allUsers, setAllUsers] = useState(null);
+  const [refetchData, setRefetchData] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +38,8 @@ function CalendarContextProvider({ children }) {
           setOpenPopup,
           allServices,
           allUsers,
+          refetchData,
+          setRefetchData,
         }}
       >
         {children}

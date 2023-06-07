@@ -29,3 +29,6 @@
 .fc-highlight{
     background-color: brown;
 }
+.fc-day-sat, .fc-day-sun {
+    background-color: rgb(237, 231, 230) !important;
+ }

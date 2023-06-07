@@ -5,6 +5,8 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import momentPlugin from '@fullcalendar/moment'
 import interactionPlugin from '@fullcalendar/interaction';
 import roLocale from '@fullcalendar/core/locales/ro';
+import { Calendar } from '@fullcalendar/core';
+
 import "./adminPages.css"
 import {slotMinTime, slotMaxTime} from "../../globalValues"
 import { getJustTime } from "../../functions/dateManipulation"
@@ -14,7 +16,7 @@ import { differenceInHours, addHours, startOfDay, compareAsc } from "date-fns";
 import  PopupCalendarEvent from '../../components/Popups/PopupsCalendarEvent'
 import  PopupAddCalendarEvent from '../../components/Popups/PopupAddCalendarEvent'
 import {multiStepContext} from '../../CalendarContext';
-import getAppointmentsBetween from '../../api/getAppointmentsBetween'
+import {getAppointmentsBetween,getAppointmentsBetweenTwo} from '../../api/getAppointmentsBetween'
 import { renderEventContent, selectBehaviour, dateClickBehaviour } from '../../functions/adminCalendar'
 
 
@@ -26,8 +28,9 @@ import { renderEventContent, selectBehaviour, dateClickBehaviour } from '../../f
 function Appointments(){
     
     const [events, setEvents] = useState(null);
-    const {openPopup, setOpenPopup, popupData, setPopupData, allServices} = useContext(multiStepContext)
+    const {openPopup, setOpenPopup, popupData, setPopupData, allServices, refetchData, setRefetchData} = useContext(multiStepContext)
     const eventsRef = useRef(events);
+    const calendarRef = useRef(null);
 
     useEffect(()=>{
         const leftNav = document.getElementById("MainMenuUser");
@@ -46,18 +49,21 @@ function Appointments(){
         eventsRef.current = events;
       }, [events])
     async function handleDateChange(event) {
-        const data = await getAppointmentsBetween(event)
-        console.log(data)
-        setEvents(data);
+        //const data = await getAppointmentsBetween(event)
+        //console.log(data)
+        //setEvents(data);
+        console.log("Changing date")
+        setRefetchData(true);
     }
     function eventClick(info){
         console.log("You just clicked on the event"); console.log(info);
+        setRefetchData(false);
         setPopupData(info);
         setOpenPopup(1);
     }
     
     function selectBehaviour(selectInfo, allServices, eventsRef) {
-        //console.log("selectBehaviour");console.log(selectInfo);console.log(allServices);console.log(eventsRef);
+        console.log("selectBehaviour");console.log(selectInfo);console.log(allServices);console.log(eventsRef);
         function isInArray(array, value) {
           return !!array.find((item) => {
             return compareAsc(item, value) === 0;
@@ -161,11 +167,23 @@ function Appointments(){
           slotMaxTime = {slotMaxTime}
           slotDuration = '01:00:00'
           contentHeight={"auto"}
-          datesSet = {(dateInfo)=>{handleDateChange(dateInfo)}}
-          events = {events}
+          //datesSet = {(dateInfo)=>{handleDateChange(dateInfo)}}
+          //events = {events}
+          datesSet = {(dateInfo)=> {handleDateChange(dateInfo)}}
+          events = {(info,successCallback, failureCallback)=> {
+            if (refetchData === false) {
+              console.log("False, not refetching; I am using:")
+              console.log(eventsRef.current)
+              if(eventsRef.current === null) return [];
+              return successCallback(eventsRef.current);
+            } else{
+              console.log("I am refetching")
+              console.log(refetchData);getAppointmentsBetween(info, successCallback, failureCallback, refetchData).then((res)=>{eventsRef.current = res; setRefetchData(false)})
+            }
+          }}
           //eventContent = {renderEventContent}
           editable = {false}
-          eventStartEditable = {false} // set True to make evnet dragable
+          eventStartEditable = {false} // set True to make event dragable
           eventClick = {eventClick}
           selectable = {true}
         //   selectAllow = {selectAllow}
@@ -173,6 +191,7 @@ function Appointments(){
           select = {(selectInfo)=>{selectBehaviour(selectInfo, allServices, eventsRef.current)}}
           selectMinDistance = {30}
           dateClick = {(selectInfo)=>{dateClickBehaviour(selectInfo, allServices, eventsRef.current)}}
+          ref={calendarRef}
         />
         {openPopup === 1 && <PopupCalendarEvent info={popupData}  />}
         {openPopup === 2 && <PopupAddCalendarEvent info={popupData}  />}
