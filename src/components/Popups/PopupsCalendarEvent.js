@@ -191,6 +191,7 @@ function PopupCalendarEvent() {
             <div className="col">Tip sedinta:</div>
             <div className="col">
               {popupData.event._def.extendedProps.allProps.name}
+              {"  "}
               {popupData.event._def.extendedProps.allProps.location ===
                 "online" && <MdVideoCameraFront className="cameraIcon" />}
             </div>

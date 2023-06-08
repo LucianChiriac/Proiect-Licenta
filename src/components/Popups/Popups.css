@@ -120,3 +120,8 @@
     height: 3em;
     margin: auto !important;
 }
+
+.cameraIcon{
+    vertical-align:text-bottom;
+    color:rgb(50, 18, 229)
+}

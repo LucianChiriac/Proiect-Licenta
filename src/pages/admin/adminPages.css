@@ -1,11 +1,18 @@
 .fc{
     margin: 30px 5vw 30px 5vw;
 }
+.fc-timegrid-event{
+    height: 90%;
+    margin: auto !important;
+}
 
 .eventFrame{
     display: flex;
     flex-direction: column;
     justify-content:  center ;
+}
+.fc .fc-timegrid-slot-label{
+    vertical-align: top !important;
 }
 .eventFrameTitle{
     display: flex;
