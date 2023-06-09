@@ -7,7 +7,7 @@
     grid-column-gap: 20px !important;
 }
 
-.MuiToggleButtonGroup-root{
+.MuiButtonBase-root{
     border: none !important;
 }
 

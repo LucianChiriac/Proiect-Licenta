@@ -1,0 +1,182 @@
+.homePage {
+    position: relative;
+    height: 89vh;
+    overflow: hidden;
+  }
+
+.homePage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/wallpaper03.jpg");
+    background-size: cover;
+    transform: scaleX(-1);
+    z-index: -1;
+  }
+.caption{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.col-50{
+    width: 50%;
+    color: white !important;
+}
+
+.homeTitle{
+    text-align: center;
+}
+.homeTitle>h1{
+    margin-bottom: 0%;
+}
+.profileImg{
+    width: 20vw;
+    height: 40vh;
+    border-radius: 25px;
+    background-color: beige;
+    float: right !important;
+    margin-right: 10vw;
+}
+
+.background{
+    width: 100%;
+}
+
+.background::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/wallpaper02.jpg");
+    background-size: cover;
+    transform: scaleX(-1);
+    z-index: -1;
+  }
+
+.content{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    overflow: hidden;
+}
+
+.aboutMe{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.aboutMe > div{
+    width: 50%;
+    height: auto;
+}
+
+.imgContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutMe > .imgContainer > .img{
+    background-color:rgb(255, 249, 241);
+    width: 50%;
+    height: auto; 
+    border-radius: 25px;
+}
+.aboutContent > div:first-child{
+    font-size: 1.5em;
+}
+
+.services .firstPage{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.services .firstPage > div:first-child{
+    width: 40%;
+    height: auto;
+}
+.services .firstPage > div:last-child{
+    width: 60%;
+    height: auto;
+}
+
+.firstPage > .imgContainer > .img{
+    background-color:rgb(255, 249, 241);
+    width: 50%;
+    height: auto; 
+    border-radius: 25px;
+}
+
+.issueList{
+    display: flex;
+    flex-wrap: wrap;
+}
+.issueList > div:not(:last-child){
+    width: 50%;
+}
+.issueList > div{
+    padding-top: 1em;
+    padding-right: 1em;
+}
+
+.contact{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.contact .firstPage{
+    display: flex;
+    flex-direction: row;
+}
+
+.contact .firstPage > div{
+    width: 50%;
+}
+
+.contactData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: ;
+    margin-left: auto;
+    padding-right: 10%;
+    gap : 10px;
+}
+
+.contactData >div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.field > div:first-child{
+    width: 30%;
+}
+.field > div:last-child{
+    width: 70%;
+    padding-right: 10%;
+    text-align: end;
+}
+.field.whatsappButton a{
+    display: flex;
+    justify-content: center;
+}
+.field.whatsappButton img{
+    padding-top: 20px;
+    width: 60%;
+}

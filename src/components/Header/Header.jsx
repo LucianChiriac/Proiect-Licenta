@@ -32,7 +32,7 @@ function Header(){
                 >Home</NavLink>
                 <NavLink to="/About" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Despre</NavLink>
                 <NavLink to="/Services" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Servicii</NavLink>
-                <NavLink to="/Booking" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Booking</NavLink>
+                {/* <NavLink to="/Booking" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Booking</NavLink> */}
                 <NavLink to="/Questions" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Intrebari</NavLink>
                 <NavLink to="/Contact" className={({isActive}) => isActive ? "headerLink activeStyleHeader" : "headerLink"}>Contact</NavLink>
                 {route !== 'authenticated' ? (

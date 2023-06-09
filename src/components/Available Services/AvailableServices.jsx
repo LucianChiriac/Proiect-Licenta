@@ -75,7 +75,6 @@ function AvailableServices(){
             
             {dataLoaded ? 
                 <ToggleButtonGroup
-                classes="toggleButtonGroup"
                 orientation="vertical"
                 value={serviceData}
                 onChange={(event, newService) =>{

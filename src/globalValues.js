@@ -8,4 +8,14 @@ const dayEnd = 18;
 const slotMinTime = "08:00:00";
 const slotMaxTime = "18:00:00";
 
-export {maxTimeReschedule, minDate, maxDate, dayStart, dayEnd, slotMaxTime, slotMinTime}
+const googleApi = "AIzaSyCQbSnjCMZ4U8dCV3CEmsavfBvZKA4kNvo";
+export {
+  maxTimeReschedule,
+  minDate,
+  maxDate,
+  dayStart,
+  dayEnd,
+  slotMaxTime,
+  slotMinTime,
+  googleApi,
+};

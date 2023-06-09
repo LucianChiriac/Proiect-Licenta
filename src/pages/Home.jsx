@@ -1,15 +1,21 @@
 import React from 'react'
-// import { Auth } from 'aws-amplify';
+import "./HeaderPages.css"
 
-// Auth.currentAuthenticatedUser()
-//   .then((user) => {
-//     return Auth.changePassword(user, 'oldPassword', 'newPassword');
-//   })
-//   .then((data) => console.log(data))
-//   .catch((err) => console.log(err));
 function Home(){
 return(
-        <div>Home page content</div>
+        <div className="homePage">
+            <div className="caption">
+                <div className="col-50">
+                    <div className="profileImg">
+                    </div>
+                </div>
+                <div className="homeTitle col-50">
+                    <h1>Iulia Comanescu</h1>
+                    <div>Psiholog, psihoterapeut Iasi</div>
+                    <div>"Lorem ipsum something text very short optional"</div>
+                </div>
+            </div>
+        </div>
     )
 }
 
