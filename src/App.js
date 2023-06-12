@@ -41,6 +41,7 @@ import CalendarContextProvider from "./CalendarContext";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
       <Route path="Home" element={<Home />} />
       <Route path="/User Appointments" element={<UserAppointments />} />
       <Route path="About" element={<About />} />
