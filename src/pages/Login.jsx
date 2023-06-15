@@ -16,7 +16,7 @@ I18n.setLanguage('en');
 I18n.putVocabularies({
   'en': {
     'Sign In': 'Log in',
-    'Create Account': 'Creaza cont',
+    'Create Account': 'Creeaza cont',
     'Sign Up': 'Creaza cont',
     'Forgot Password': 'Am uitat parola',
     'Forgot your password?': 'Am uitat parola',
@@ -47,27 +47,33 @@ function Login(){
           phone_number: {
             dialCode: '+40',
             placeholder: 'Introduceti numarul dumneavoastra de telefon',
+            isRequired: true,
             label: 'Numar de telefon'
           },
           email: {
             placeholder: 'Adresa dumneavoastra de email',
-            label: 'Email'
+            label: 'Email',
+            isRequired: true
           },
           password: {
             placeholder: 'Introduceti parola',
-            label: 'Parola'
+            label: 'Parola',
+            isRequired: true
           },
           confirm_password: {
             placeholder: 'Reintroduceti parola',
-            label: 'Confirmati parola'
+            label: 'Confirmati parola',
+            isRequired: true
           },
           family_name: {
             placeholder: "Numele de familie (ex: Popescu)",
-            label: 'Nume de familie'
+            label: 'Nume de familie',
+            isRequired: true
           },
           given_name: {
             placeholder: 'Prenumele dumneavoastra',
-            label: 'Prenume'
+            label: 'Prenume',
+            isRequired: true
           }
         },
       }

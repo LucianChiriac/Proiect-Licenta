@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./UserAppointment.css";
-import { maxTimeReschedule } from "../../globalValues";
+import { maxTimeReschedule, adminPhone } from "../../globalValues";
 import { hoursTillAppointment } from "../../functions/dateManipulation";
 import Popup from "reactjs-popup";
 import Datepicker from "../Date_Picker/DatePicker";
 import { multiStepContext } from "../../StepperContext";
+import whatsappLogo from "../../assets/WhatsApp.svg";
 
 function UserAppointment(props) {
   const { serviceData, setServiceData, dateData } =
@@ -164,6 +165,22 @@ function UserAppointment(props) {
         <div>
           <div className="prop">Status</div>
           <div>{status}</div>
+        </div>
+        <div>
+          <div>
+            <a
+              aria-label="Chat on WhatsApp"
+              href={`https://wa.me/${adminPhone}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="whatsappLogo"
+                src={whatsappLogo}
+                alt="whatsapp logo"
+              />
+            </a>
+          </div>
         </div>
         <div className="singleAppointmentContainer--secondRow--buttons">
           {

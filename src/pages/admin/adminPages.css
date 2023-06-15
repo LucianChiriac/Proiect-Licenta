@@ -39,3 +39,59 @@
 .fc-day-sat, .fc-day-sun {
     background-color: rgb(237, 231, 230) !important;
  }
+
+ .listaPacienti{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+ }
+
+ .listaPacienti > li {
+    display: flex;
+    flex-direction: row;
+    padding: 0 5% 0 5%;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color:var(--box-background);
+ }
+ .listaPacienti > li:not(:last-child){
+    border-bottom: 2px dotted rgb(190, 188, 188);
+  }
+ .listaPacienti >li:first-child{
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 10px;
+ }
+ .listaPacienti > li> div{
+    flex-grow: 1;
+    flex-shrink: 1;
+ }
+ .listaPacienti > li> div:nth-child(1), .listaPacienti > li> div:nth-child(2){
+    flex-basis: 15%;
+ } 
+ .listaPacienti > li> div:nth-child(3){
+    flex-basis: 35%;
+ }
+
+ .listaPacienti > li> div:nth-child(4){
+    flex-basis: 25%;
+ }
+
+ .listaPacienti > li> div:nth-child(1){
+    flex-basis: 10%;
+ }
+
+ .patientsContainer .title{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    font-size: 2em;
+ }
+
+ .patientsContainer .searchBar{
+    display: flex;
+    justify-content: center;
+ }

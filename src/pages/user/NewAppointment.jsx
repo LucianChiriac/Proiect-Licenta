@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
-import StepContent from '@mui/material/StepContent';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -10,7 +9,7 @@ import AvailableServices from "../../components/Available Services/AvailableServ
 import DatePicker from "../../components/Date_Picker/DatePicker"
 import Payment from '../../components/Payment/Payment';
 import BookingReview from '../../components/BookingReview/BookingReview';
-import StepContextProvider, {multiStepContext} from '../../StepperContext';
+import {multiStepContext} from '../../StepperContext';
 import "./userPages.css"
 
 const steps = ['Selectati un serviciu', 'Selectati data si ora', 'Confirmare programare', 'Plata'];

@@ -151,7 +151,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-items: ;
     margin-left: auto;
     padding-right: 10%;
     gap : 10px;
@@ -179,4 +178,7 @@
 .field.whatsappButton img{
     padding-top: 20px;
     width: 60%;
+}
+.auth-wrapper{
+    padding-top: 5%;
 }

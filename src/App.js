@@ -27,7 +27,7 @@ import UserBookings from "./pages/user/UserBookings";
 import SelectService from "./pages/user/SelectService";
 ///
 import Appointments from "./pages/admin/Appointments";
-import Overview from "./pages/admin/Overview";
+import Pacienti from "./pages/admin/Pacienti";
 //
 import Error from "./Error";
 import { loader as servicesLoader } from "./components/Available Services/AvailableServices";
@@ -88,7 +88,16 @@ const router = createBrowserRouter(
       >
         <Route index element={<UserProfile />} />
         <Route path="profile" element={<UserProfile />} />
-        <Route path="overview" element={<Overview />} />
+        <Route
+          path="pacienti"
+          element={
+            <CalendarContextProvider>
+              <StepContextProvider>
+                <Pacienti />
+              </StepContextProvider>
+            </CalendarContextProvider>
+          }
+        />
         <Route
           path="appointments"
           element={

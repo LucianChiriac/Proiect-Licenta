@@ -24,7 +24,7 @@ return(
                     <div>+40 0700 000 000</div>
                 </div>
                 <div className='field whatsappButton'>
-                <a aria-label="Chat on WhatsApp" href="https://wa.me/+40745597525"> <img alt="Chat on WhatsApp" src={whatsappButton} />
+                <a aria-label="Chat on WhatsApp" href="https://wa.me/+40745597525" target="_blank"> <img alt="Chat on WhatsApp" src={whatsappButton} />
                 </a>
                 </div>
             </div>

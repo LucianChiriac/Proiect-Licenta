@@ -88,8 +88,8 @@ function MainMenuUser(){
             <NavLink to="profile" end className={({isActive}) => isActive ? "activeStyle" : ""}>
               <Button icon={FaRegUserCircle} text="Profil"/>
             </NavLink>
-            <NavLink to="overview" className={({isActive}) => isActive ? "activeStyle" : ""}>
-              <Button icon={GiBinoculars} text="Overview"/>
+            <NavLink to="pacienti" className={({isActive}) => isActive ? "activeStyle" : ""}>
+              <Button icon={GiBinoculars} text="Pacienti"/>
             </NavLink>
             <NavLink to="appointments" className={({isActive}) => isActive ? "activeStyle" : ""}>
               <Button icon={BsCalendar4Week} text="Programari"/>

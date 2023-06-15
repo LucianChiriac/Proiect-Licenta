@@ -7,6 +7,7 @@ const dayEnd = 18;
 
 const slotMinTime = "08:00:00";
 const slotMaxTime = "18:00:00";
+const adminPhone = "+40745597525";
 
 const googleApi = "AIzaSyCQbSnjCMZ4U8dCV3CEmsavfBvZKA4kNvo";
 export {
@@ -18,4 +19,5 @@ export {
   slotMaxTime,
   slotMinTime,
   googleApi,
+  adminPhone,
 };

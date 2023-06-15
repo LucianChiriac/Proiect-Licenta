@@ -140,7 +140,7 @@ function UserProfile(){
                     <input type="password" id="confirma_parola" name="confirm_password" placeholder="***********" onChange={handleChange} disabled/>
                     </div>
                 </div>
-                <div className="row profile">
+                <div className="row profile hidden">
                     <div className="col-25">
                         <input type="checkbox" id="email_setting" name="email_setting" checked={emailNotification} onChange={switchEmailSettings} disabled />
                     </div>
@@ -148,15 +148,15 @@ function UserProfile(){
                         Doresc sa fiu notificat prin email cu privire la programarile mele.
                     </div>
                 </div>
-                <div className="row profile">
+                <div className="row profile hidden">
                     <div className="col-25">
                     <input type="checkbox" id="sms_setting" name="sms_setting" checked={smsNotification} onChange={switchSmsNotification} disabled />
                     </div>
-                    <div className="col-75">
+                    <div className="col-75 ">
                         Doresc sa fiu notificat prin SMS cu privire la programarile mele.
                     </div>
                 </div>
-                <div className="row profile">
+                <div className="row profile hidden">
                     {!editMode && <button className='greenButton' onClick={()=> setEditMode(true)}>
                     Modifica datele
                     </button>}
