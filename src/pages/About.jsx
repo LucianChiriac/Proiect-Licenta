@@ -10,7 +10,7 @@ function About(){
                     </div>
                     <div className="aboutContent">
                         <div>Despre mine</div>
-                        <h1>Iulia Comanescu</h1>
+                        <h1>Iulia Paslaru</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in ex mi. Morbi elementum sagittis dui, quis blandit urna imperdiet id. Nam pulvinar mollis ultricies. Mauris eu lorem eu lectus iaculis elementum sit amet et felis. Vestibulum rhoncus vehicula magna, sed viverra lectus. Donec mattis orci at bibendum aliquam. 
                         </p>
                         <p>

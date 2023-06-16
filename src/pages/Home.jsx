@@ -10,7 +10,7 @@ return(
                     </div>
                 </div>
                 <div className="homeTitle col-50">
-                    <h1>Iulia Comanescu</h1>
+                    <h1>Iulia Paslaru</h1>
                     <div>Psiholog, psihoterapeut Iasi</div>
                     <div>"Lorem ipsum something text very short optional"</div>
                 </div>

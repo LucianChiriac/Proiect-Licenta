@@ -182,7 +182,7 @@ function UserAppointment(props) {
             </a>
           </div>
         </div>
-        <div className="singleAppointmentContainer--secondRow--buttons">
+        <div className="singleAppointmentContainer--secondRow--button1">
           {
             // timeLeft >= maxTimeReschedule &&
             <Popup
@@ -201,6 +201,7 @@ function UserAppointment(props) {
               onOpen={setState}
               onClose={() => {
                 setModalOpen(false);
+                setServiceData(null);
                 if (reloadPage) {
                   window.location.reload(true);
                 }
@@ -239,6 +240,8 @@ function UserAppointment(props) {
               )}
             </Popup>
           }
+        </div>
+        <div className="singleAppointmentContainer--secondRow--button1">
           {
             <Popup
               trigger={
@@ -252,6 +255,7 @@ function UserAppointment(props) {
               onOpen={() => setState(false)}
               onClose={() => {
                 setModalOpen(false);
+                setServiceData(null);
                 if (reloadPage) {
                   window.location.reload(true);
                 }

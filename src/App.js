@@ -24,7 +24,6 @@ import Layout from "./components/Layouts/Layout";
 import UserLayout from "./components/Layouts/UserLayout";
 import UserProfile from "./pages/shared/Profile";
 import UserBookings from "./pages/user/UserBookings";
-import SelectService from "./pages/user/SelectService";
 ///
 import Appointments from "./pages/admin/Appointments";
 import Pacienti from "./pages/admin/Pacienti";

@@ -66,7 +66,7 @@ function AvailableServices(){
                 setDataLoaded(true);
                 //setDateDataLoaded(true);
             })
-            
+         setServiceData(null);   
     }, [])
     
    

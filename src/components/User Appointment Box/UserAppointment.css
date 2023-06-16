@@ -23,36 +23,32 @@ body{
     align-items: center;
 }
 
-.singleAppointmentContainer--firstRow > :first-child {
+.singleAppointmentContainer--firstRow > :first-child,.singleAppointmentContainer--secondRow > :first-child {
     width: 35%;
     max-height: 100%;
     overflow: hidden;
 }
-.singleAppointmentContainer--firstRow > :nth-child(2) {
+.singleAppointmentContainer--firstRow > :nth-child(2), .singleAppointmentContainer--secondRow > :nth-child(2) {
     width: 15%;
     max-height: 100%;
     overflow: hidden;
 }
 
-.singleAppointmentContainer--firstRow > :nth-child(n+3) {
+.singleAppointmentContainer--firstRow > :nth-child(n+3),.singleAppointmentContainer--secondRow > :nth-child(n+3) {
     width: 25%;
     max-height: 100%;
     overflow: hidden;
 }
-
+.singleAppointmentContainer--secondRow > :nth-child(n+3){
+    display: flex;
+    justify-content: left;
+}
 .singleAppointmentContainer--secondRow > div{
     max-width: 75%;
     max-height: 100%;
     overflow: hidden;
 }
 
-.singleAppointmentContainer--secondRow--buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 70%;
-    width: 50%;
-}
 
 .prop{
     color: grey;

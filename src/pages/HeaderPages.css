@@ -182,3 +182,90 @@
 .auth-wrapper{
     padding-top: 5%;
 }
+
+.ServicesInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.ServicesInfo > .row{
+    display: flex;
+    flex-direction: row;
+}
+
+.ServicesInfo .row .serviceDetailsWrapper{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+.serviceDetailsWrapper .serviceDetails{
+    min-width: 250px;
+    width: 80%;
+    background-color: rgb(126, 106, 81);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.serviceDetailsWrapper {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .serviceDetailsWrapper:hover .serviceDetails {
+    transform: scale(1.1);
+    z-index: 1;
+  }
+  
+  .serviceDetailsWrapper .serviceDetails {
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .serviceDetailsWrapper .serviceDetails .title,
+  .serviceDetailsWrapper .serviceDetails .durata,
+  .serviceDetailsWrapper .serviceDetails .pret {
+    position: relative;
+  }
+  
+  .serviceDetailsWrapper .serviceDetails .title {
+    font-size: 16px;
+  }
+  
+  .serviceDetailsWrapper .serviceDetails .durata,
+  .serviceDetailsWrapper .serviceDetails .pret {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+.serviceDetailsWrapper .serviceDetails div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.secondPage .sectionTitle{
+    font-size: 2em;
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.services .secondPage{
+    height: 80vh;
+}
+
+.butonProgramare{
+    display: flex;
+    justify-content: center;
+    padding-top: 7vh;
+}
+.butonProgramare .greenButton{
+    font-size: 1.5em;
+    padding: 15px 10px 15px 10px;
+    border-radius: 25px;
+}
