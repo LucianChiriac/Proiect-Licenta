@@ -156,6 +156,11 @@
     gap : 10px;
 }
 
+.contactData .title{
+    font-size: 1.5em;
+    justify-content: left;
+}
+
 .contactData >div{
     display: flex;
     flex-direction: row;
@@ -268,4 +273,26 @@
     font-size: 1.5em;
     padding: 15px 10px 15px 10px;
     border-radius: 25px;
+}
+
+.questionsPage .title{
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.MuiAccordion-root{
+    padding-bottom: 25px;
+    background-color: transparent !important;
+
+}
+.MuiAccordionDetails-root{
+    background-color: aliceblue;
+    margin: 10px 3px 0 3px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    
 }
