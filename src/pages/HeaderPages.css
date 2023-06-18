@@ -226,7 +226,7 @@ body{
     font-size: 24px;
     padding-right: 6px;
 }
-.serviceBox .cta{
+/* .serviceBox .cta{
     background-color: transparent;
     color: var(--text-yellow);
     border: 2px solid var(--text-yellow);
@@ -235,7 +235,63 @@ body{
 }
 .cta:hover{
     cursor: pointer;
+} */
+
+.serviceBox .cta {
+    color: var(--text-yellow);
+    font-size: 16px;
+    border: 2px solid var(--text-yellow);
+    width: 14em;
+    height: 3em;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+    background-color: transparent;
 }
+
+.serviceBox .cta span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--text-yellow);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.12s);
+    z-index: -1;
+}
+
+.serviceBox .cta:hover {
+    color: var(--background-blue);
+    cursor: pointer;
+}
+
+.serviceBox .cta:hover span {
+    transform: translateY(0) scale(3);
+}
+.serviceBox .cta span:nth-child(1) {
+    --n: 1;
+}
+
+.serviceBox .cta span:nth-child(2) {
+    --n: 2;
+}
+
+.serviceBox .cta span:nth-child(3) {
+    --n: 3;
+}
+
+.serviceBox .cta span:nth-child(4) {
+    --n: 4;
+}
+
 
 .contact{
     margin-top: 5%;

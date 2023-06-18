@@ -149,7 +149,7 @@ function Services(){
                                         <div>300</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!</button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                            <div className="serviceBox">
@@ -166,7 +166,7 @@ function Services(){
                                         <div>500</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!</button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                            <div className="serviceBox">
@@ -183,7 +183,7 @@ function Services(){
                                         <div>250</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!</button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                         </div>
@@ -202,7 +202,7 @@ function Services(){
                                         <div>350</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!</button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                            <div className="serviceBox">
@@ -219,7 +219,7 @@ function Services(){
                                         <div>500</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!</button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                            <div className="serviceBox">
@@ -236,7 +236,9 @@ function Services(){
                                         <div>200</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!</button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>
+                                        PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span>
+                                    </button> </div>
                                 </div>
                            </div>
                         </div>
