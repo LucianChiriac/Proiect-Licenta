@@ -96,7 +96,7 @@ function Login(){
   }, [route, navigate, from]);
 
   return (
-    <View className="auth-wrapper">
+    <View className="auth-wrapper background">
       <Authenticator formFields={formFields}></Authenticator>
     </View>
   )    

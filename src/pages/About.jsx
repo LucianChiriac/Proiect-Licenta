@@ -1,4 +1,5 @@
 import React from 'react'
+import profilePic from "../assets/profilePic.jpg"
 
 function About(){
     return(
@@ -6,10 +7,10 @@ function About(){
             <div className="content">
                 <div className="aboutMe">
                     <div className="imgContainer">
-                        <div className="img"></div>
+                        <img src={profilePic} alt="profile"></img>
                     </div>
                     <div className="aboutContent">
-                        <div>Despre mine</div>
+                        <div>DESPRE MINE</div>
                         <h1>Iulia Paslaru</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in ex mi. Morbi elementum sagittis dui, quis blandit urna imperdiet id. Nam pulvinar mollis ultricies. Mauris eu lorem eu lectus iaculis elementum sit amet et felis. Vestibulum rhoncus vehicula magna, sed viverra lectus. Donec mattis orci at bibendum aliquam. 
                         </p>

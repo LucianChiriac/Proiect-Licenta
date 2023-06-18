@@ -1,3 +1,7 @@
+body{
+    font-family: 'Karla';
+}
+
 .homePage {
     position: relative;
     height: 89vh;
@@ -37,6 +41,10 @@
 .homeTitle>h1{
     margin-bottom: 0%;
 }
+
+.homeTitle .subtitle{
+    color: var(--text-yellow);
+}
 .profileImg{
     width: 20vw;
     height: 40vh;
@@ -57,7 +65,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/wallpaper02.jpg");
+    /* background-image: url("../assets/wallpaper02.jpg"); */
+    background-color: var(--background-blue);
     background-size: cover;
     transform: scaleX(-1);
     z-index: -1;
@@ -89,14 +98,15 @@
     justify-content: center;
 }
 
-.aboutMe > .imgContainer > .img{
+.aboutMe > .imgContainer > img{
     background-color:rgb(255, 249, 241);
-    width: 50%;
-    height: auto; 
+    width: auto;
+    height: 40%; 
     border-radius: 25px;
 }
 .aboutContent > div:first-child{
     font-size: 1.5em;
+    color: var(--text-yellow);
 }
 
 .services .firstPage{
@@ -115,6 +125,9 @@
     height: auto;
 }
 
+.servicesContent h1{
+    color: var(--text-yellow);
+}
 .firstPage > .imgContainer > .img{
     background-color:rgb(255, 249, 241);
     width: 50%;
@@ -128,7 +141,23 @@
 }
 .issueList > div:not(:last-child){
     width: 50%;
+    display: flex;
+    flex-direction: row;
 }
+
+.issueList > div:last-child{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.checkIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
 .issueList > div{
     padding-top: 1em;
     padding-right: 1em;
@@ -253,14 +282,17 @@
     gap: 20px;
 }
 
-.secondPage .sectionTitle{
-    font-size: 2em;
-    text-align: center;
+.secondPage h4{
+    font-size: 1.7em;
+}
+
+.thirdPage .sectionTitle{
+    font-size: 1.7em;
     padding-top: 5vh;
     padding-bottom: 5vh;
 }
 
-.services .secondPage{
+.services .thirdPage{
     height: 80vh;
 }
 
@@ -277,16 +309,20 @@
 
 .questionsPage .title{
     font-size: 2em;
-    color: white;
+    color: var(--text-yellow);
     display: flex;
     justify-content: center;
     padding-top: 5vh;
     padding-bottom: 5vh;
 }
+.questionsPage .content{
+    width: 60%;
+}
 
 .MuiAccordion-root{
     padding-bottom: 25px;
     background-color: transparent !important;
+    border: 0px !important;
 
 }
 .MuiAccordionDetails-root{

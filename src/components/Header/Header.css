@@ -1,10 +1,11 @@
 body {
     background-color: rgba(255, 255, 255, 0.833);
+   
 }
 .mainHeader{
   position: sticky !important;
   top: 0;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid var(--green-highlight);
 }
 .mainNav{
     display: flex;
@@ -12,17 +13,20 @@ body {
     height : 10vh;
     align-items: center;
     background-color:var(--header-grey-blue);
-    box-shadow: 0 10px 20px rgb(131, 127, 201);
+    box-shadow: 0 0px 2px var(--green-highlight);
+    font-family: 'Spectral', serif;
   }
-
-  /* #2E86AB
-#FFC107
-#E91E63
-#673AB7
-#FF5722 */
-
+  .logoContainer {
+    width: auto; /* Adjust the width as needed */
+    height: auto; /* Adjust the height as needed */
+    padding-right: 25%;
+  }
   
-
+  .logo {
+    width: 100%; /* Ensure the logo fills the container */
+    height: 100%; /* Ensure the logo fills the container */
+    object-fit: contain; /* Maintain the aspect ratio of the logo */
+  }
 
   .headerLink {
     position: relative;
@@ -38,7 +42,7 @@ body {
     left: 0;
     width: 0; /* Initial width of the line set to 0 */
     height: 2px; /* Adjust the height of the line */
-    background-color: black;
+    background-color: var(--text-yellow);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust the shadow properties */
     transition: width 0.3s ease; /* Transition property for smooth width change */
   }
@@ -58,7 +62,7 @@ body {
     bottom: -5px; /* Adjust the distance of the line from the text */
     width: 100%;
     height: 3px; /* Adjust the height of the line */
-    background-color: black;
+    background-color: var(--text-yellow);
     border-radius: 10px; /* Adjust the border radius for rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow to the line */
   }

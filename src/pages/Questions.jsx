@@ -52,7 +52,7 @@ function Questions(){
   
 return(
     <div className="questionsPage background">
-        <div className='title'>Intrebari frecvente</div>
+        <div className='title'>INTREBARI FRECVENTE</div>
         <div className='content'>
         <div>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>

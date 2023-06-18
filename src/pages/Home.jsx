@@ -11,7 +11,7 @@ return(
                 </div>
                 <div className="homeTitle col-50">
                     <h1>Iulia Paslaru</h1>
-                    <div>Psiholog, psihoterapeut Iasi</div>
+                    <div className="subtitle">PSIHOLOG, PSIHOTERAPEUT IASI</div>
                     <div>"Lorem ipsum something text very short optional"</div>
                 </div>
             </div>
