@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 import { AiOutlineCheckCircle } from "react-icons/ai"
-
+import keyhole from "../assets/keyhole.jpg"
 function Services(){
 
     let navigate = useNavigate(); 
@@ -23,7 +23,7 @@ function Services(){
                         </p>
                     </div>
                     <div className="imgContainer">
-                        <div className="img"></div>
+                        <img src={keyhole} alt="profile"></img>
                     </div>
                 </div>
                 <div className="secondPage">

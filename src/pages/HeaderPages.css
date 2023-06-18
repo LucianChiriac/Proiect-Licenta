@@ -128,11 +128,15 @@ body{
 .servicesContent h1{
     color: var(--text-yellow);
 }
-.firstPage > .imgContainer > .img{
+.firstPage > .imgContainer{
+    margin-top: 21.44px;
+}
+.firstPage > .imgContainer > img{
     background-color:rgb(255, 249, 241);
     width: 50%;
     height: auto; 
     border-radius: 25px;
+    aspect-ratio: 1/1;
 }
 
 .issueList{

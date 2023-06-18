@@ -18,8 +18,9 @@ body {
   }
   .logoContainer {
     width: auto; /* Adjust the width as needed */
-    height: auto; /* Adjust the height as needed */
+    height: 70%; /* Adjust the height as needed */
     padding-right: 25%;
+    padding-left: 5%;
   }
   
   .logo {
