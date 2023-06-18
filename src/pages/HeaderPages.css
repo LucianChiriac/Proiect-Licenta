@@ -77,7 +77,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     color: white;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .aboutMe{
@@ -168,6 +168,75 @@ body{
     padding-right: 1em;
 }
 
+.ServicesInfo .serviceBox{
+    display: inline-block;
+    position: relative;
+    border: 2px white solid;
+    width: 30%;
+    transition: transform 0.3s;
+    z-index: 0;
+    
+}
+.ServicesInfo .serviceBox:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.ServicesInfo img{
+    border-bottom: 2px white solid;
+    width: 100%;
+    height: 30%;
+}
+.serviceBox .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.serviceBox .content > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.serviceBox .content > div:first-of-type{
+    min-height: 5em;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    align-items: start;
+}
+.serviceBox .content > div:last-of-type{
+    font-size: 16;
+    font-weight: 500;
+    font-family: 'Roboto';
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+.content .dataField div:nth-child(1){
+    font-size: 18px;
+    padding-right: 12px;
+}
+.content .dataField div:nth-child(3){
+    font-size: 18px;
+}
+.content .dataField div:nth-child(2){
+    font-size: 24px;
+    padding-right: 6px;
+}
+.serviceBox .cta{
+    background-color: transparent;
+    color: var(--text-yellow);
+    border: 2px solid var(--text-yellow);
+    padding: 10px 20px 10px 20px;
+    margin-top: auto;
+}
+.cta:hover{
+    cursor: pointer;
+}
+
 .contact{
     margin-top: 5%;
     margin-bottom: 5%;
@@ -230,62 +299,9 @@ body{
 .ServicesInfo > .row{
     display: flex;
     flex-direction: row;
+    gap: 5%;
 }
 
-.ServicesInfo .row .serviceDetailsWrapper{
-    width: 30%;
-    display: flex;
-    justify-content: center;
-}
-.serviceDetailsWrapper .serviceDetails{
-    min-width: 250px;
-    width: 80%;
-    background-color: rgb(126, 106, 81);
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-
-.serviceDetailsWrapper {
-    display: inline-block;
-    margin-right: 10px;
-    position: relative;
-  }
-  
-  .serviceDetailsWrapper:hover .serviceDetails {
-    transform: scale(1.1);
-    z-index: 1;
-  }
-  
-  .serviceDetailsWrapper .serviceDetails {
-    transition: transform 0.3s;
-    position: relative;
-    z-index: 0;
-  }
-  
-  .serviceDetailsWrapper .serviceDetails .title,
-  .serviceDetailsWrapper .serviceDetails .durata,
-  .serviceDetailsWrapper .serviceDetails .pret {
-    position: relative;
-  }
-  
-  .serviceDetailsWrapper .serviceDetails .title {
-    font-size: 16px;
-  }
-  
-  .serviceDetailsWrapper .serviceDetails .durata,
-  .serviceDetailsWrapper .serviceDetails .pret {
-    margin-top: 5px;
-    font-size: 14px;
-  }
-.serviceDetailsWrapper .serviceDetails div{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-}
 
 .secondPage h4{
     font-size: 1.7em;
@@ -298,7 +314,7 @@ body{
 }
 
 .services .thirdPage{
-    height: 80vh;
+    height: auto;
 }
 
 .butonProgramare{
