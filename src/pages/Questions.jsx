@@ -21,7 +21,7 @@ const Accordion = styled((props) => (
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
     expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '1.1rem', fontWeight:'bold', color:'blue'}} />}
-    sx={{borderRadius:'15px'}}
+    sx={{borderRadius:'5px'}}
     {...props}
   />
 ))(({ theme }) => ({
@@ -44,7 +44,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 function Questions(){
-    const [expanded, setExpanded] = React.useState('panel1');
+    const [expanded, setExpanded] = React.useState('');
 
     const handleChange = (panel) => (event, newExpanded) => {
       setExpanded(newExpanded ? panel : false);
@@ -52,7 +52,7 @@ function Questions(){
   
 return(
     <div className="questionsPage background">
-        <div className='title'>INTREBARI FRECVENTE</div>
+        <div className='title'>ÎNTREBĂRI FRECVENTE</div>
         <div className='content'>
         <div>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>

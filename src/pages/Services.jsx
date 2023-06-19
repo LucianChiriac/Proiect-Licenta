@@ -131,59 +131,59 @@ function Services(){
                 </div>
                 <div className="thirdPage">
                     <div className="sectionTitle">
-                        Tipurile de sedinte disponibile
+                        Tipurile de ședințe disponibile
                     </div>
                     <div className="ServicesInfo">
                         <div className="row">
                            <div className="serviceBox">
                                 <div><img src={sedintaOnlineSingle} alt="stockImage"/></div>
                                 <div className="content">
-                                    <div>Sedinta Individuala - Online</div>
+                                    <div>Ședință Individuală - Online</div>
                                     <div className="dataField">
-                                        <div>Durata:</div>
+                                        <div>Durată:</div>
                                         <div>50</div>
                                         <div>minute</div>
                                     </div>
                                     <div className="dataField">
-                                        <div>Pret:</div>
+                                        <div>Preț:</div>
                                         <div>300</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZĂ-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                            <div className="serviceBox">
                                 <div><img src={sedintaOnlineDouble} alt="stockImage"/></div>
                                 <div className="content">
-                                    <div>Sedinta Individuala Dubla - Online</div>
+                                    <div>Ședință Individuală Dublă - Online</div>
                                     <div className="dataField">
-                                        <div>Durata:</div>
+                                        <div>Durată:</div>
                                         <div>90</div>
                                         <div>minute</div>
                                     </div>
                                     <div className="dataField">
-                                        <div>Pret:</div>
+                                        <div>Preț:</div>
                                         <div>500</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZĂ-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                            <div className="serviceBox">
                                 <div><img src={sedintaCabinetSingle} alt="stockImage"/></div>
                                 <div className="content">
-                                    <div>Sedinta Individuala - Cabinet</div>
+                                    <div>Ședință Individuală - Cabinet</div>
                                     <div className="dataField">
-                                        <div>Durata:</div>
+                                        <div>Durată:</div>
                                         <div>50</div>
                                         <div>minute</div>
                                     </div>
                                     <div className="dataField">
-                                        <div>Pret:</div>
+                                        <div>Preț:</div>
                                         <div>250</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZĂ-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                         </div>
@@ -191,53 +191,53 @@ function Services(){
                         <div className="serviceBox">
                                 <div><img src={sedintaCabinetDubla} alt="stockImage"/></div>
                                 <div className="content">
-                                    <div>Sedinta Individuala Dubla - Cabinet</div>
+                                    <div>Ședință Individuală Dublă - Cabinet</div>
                                     <div className="dataField">
-                                        <div>Durata:</div>
+                                        <div>Durată:</div>
                                         <div>90</div>
                                         <div>minute</div>
                                     </div>
                                     <div className="dataField">
-                                        <div>Pret:</div>
+                                        <div>Preț:</div>
                                         <div>350</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZĂ-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                            <div className="serviceBox">
                                 <div><img src={terapieCuplu} alt="stockImage"/></div>
                                 <div className="content">
-                                    <div>Terapie de Familie si Cuplu</div>
+                                    <div>Terapie de Familie și Cuplu</div>
                                     <div className="dataField">
-                                        <div>Durata:</div>
+                                        <div>Durată:</div>
                                         <div>90</div>
                                         <div>minute</div>
                                     </div>
                                     <div className="dataField">
-                                        <div>Pret:</div>
+                                        <div>Preț:</div>
                                         <div>500</div>
                                         <div>RON</div>
                                     </div>
-                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span></button> </div>
+                                    <div><button className="cta"  onClick={routeChange}>PROGRAMEAZĂ-TE!<span></span><span></span><span></span><span></span></button> </div>
                                 </div>
                            </div>
                            <div className="serviceBox">
                                 <div><img src={terapieCopii} alt="stockImage"/></div>
                                 <div className="content">
-                                    <div>Terapie Copii si Adolescenti</div>
+                                    <div>Terapie Copii și Adolescenți</div>
                                     <div className="dataField">
-                                        <div>Durata:</div>
+                                        <div>Durată:</div>
                                         <div>50</div>
                                         <div>minute</div>
                                     </div>
                                     <div className="dataField">
-                                        <div>Pret:</div>
+                                        <div>Preț:</div>
                                         <div>200</div>
                                         <div>RON</div>
                                     </div>
                                     <div><button className="cta"  onClick={routeChange}>
-                                        PROGRAMEAZA-TE!<span></span><span></span><span></span><span></span>
+                                        PROGRAMEAZĂ-TE!<span></span><span></span><span></span><span></span>
                                     </button> </div>
                                 </div>
                            </div>
@@ -260,7 +260,7 @@ export default Services;
     </div>
     <div className="durata">
         <div>
-            Durata:
+            Durată:
         </div>
         <div>
         50 minute
@@ -268,7 +268,7 @@ export default Services;
     </div>
     <div className='pret'>
         <div>
-            Pret: 
+            Preț: 
         </div>
         <div>
             300 RON
@@ -283,14 +283,14 @@ export default Services;
     </div>
     <div className="durata">
         <div>
-            Durata: 
+            Durată: 
         </div>
         <div>
             90 minute
         </div>
     </div>
     <div className='pret'>
-        <div>Pret:</div>
+        <div>Preț:</div>
         <div>500 RON</div>
     </div>
 </div>
@@ -301,11 +301,11 @@ export default Services;
     Sedinta individuala - cabinet
     </div>
     <div className="durata">
-        <div>Durata:</div>
+        <div>Durată:</div>
         <div>50 minute</div>
     </div>
     <div className='pret'>
-        <div>Pret:</div>
+        <div>Preț:</div>
         <div>250 RON</div>
     </div>
 </div>
@@ -317,11 +317,11 @@ export default Services;
                                     Sedinta individuala dubla - cabinet
                                     </div>
                                     <div className="durata">
-                                        <div>Durata: </div>
+                                        <div>Durată: </div>
                                         <div>90 minute</div>
                                     </div>
                                     <div className='pret'>
-                                        <div>Pret:</div>
+                                        <div>Preț:</div>
                                         <div>350 RON</div>
                                     </div>
                                 </div>
@@ -329,14 +329,14 @@ export default Services;
                             <div className='serviceDetailsWrapper'>
                                 <div className="serviceDetails">
                                     <div className="title">
-                                    Terapie de familie si cuplu
+                                    Terapie de familie și cuplu
                                     </div>
                                     <div className="durata">
-                                        <div>Durata:</div>
+                                        <div>Durată:</div>
                                         <div>90 minute</div>
                                     </div>
                                     <div className='pret'>
-                                        <div>Pret:</div>
+                                        <div>Preț:</div>
                                         <div>500 RON</div>
                                     </div>
                                 </div>
@@ -344,14 +344,14 @@ export default Services;
                             <div className='serviceDetailsWrapper'>
                                 <div className="serviceDetails">
                                     <div className="title">
-                                    Terapie copii si adolescenti
+                                    Terapie copii și adolescenti
                                     </div>
                                     <div className="durata">
-                                        <div>Durata:</div>
+                                        <div>Durată:</div>
                                         <div>50 minute</div>
                                     </div>
                                     <div className='pret'>
-                                        <div>Pret:</div>
+                                        <div>Preț:</div>
                                         <div>200 RON</div>
                                     </div>
                             </div>

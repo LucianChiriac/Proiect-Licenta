@@ -44,7 +44,14 @@ body{
 
 .homeTitle .subtitle{
     color: var(--text-yellow);
+    white-space: pre-line;
 }
+
+.motto{
+    font-family: 'Allura', cursive;
+    font-size: 24px;
+}
+
 .profileImg{
     width: 20vw;
     height: 40vh;

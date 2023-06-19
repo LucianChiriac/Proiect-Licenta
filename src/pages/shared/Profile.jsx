@@ -118,7 +118,7 @@ function UserProfile(){
                 </div>
                 <div className="row profile">
                     <div className="col-25">
-                        <label htmlFor="parola_curenta">Parola curenta</label>
+                        <label htmlFor="parola_curenta">Parola curentă</label>
                     </div>
                     <div className="col-75">
                         <input type="password" id="parola_curenta" name="old_password" placeholder="********" onChange={handleChange} disabled/>
@@ -126,7 +126,7 @@ function UserProfile(){
                 </div>
                 <div className="row profile">
                     <div className="col-25">
-                        <label htmlFor="parola_noua">Parola noua</label>
+                        <label htmlFor="parola_noua">Parola nouă</label>
                     </div>
                     <div className="col-75">
                         <input type="password" id="parola_noua" name="new_password" placeholder="***********" onChange={handleChange} disabled/>
@@ -145,7 +145,7 @@ function UserProfile(){
                         <input type="checkbox" id="email_setting" name="email_setting" checked={emailNotification} onChange={switchEmailSettings} disabled />
                     </div>
                     <div className="col-75">
-                        Doresc sa fiu notificat prin email cu privire la programarile mele.
+                        Doresc să fiu notificat prin email cu privire la progrămarile mele.
                     </div>
                 </div>
                 <div className="row profile hidden">
@@ -153,21 +153,21 @@ function UserProfile(){
                     <input type="checkbox" id="sms_setting" name="sms_setting" checked={smsNotification} onChange={switchSmsNotification} disabled />
                     </div>
                     <div className="col-75 ">
-                        Doresc sa fiu notificat prin SMS cu privire la programarile mele.
+                        Doresc să fiu notificat prin SMS cu privire la progrămarile mele.
                     </div>
                 </div>
                 <div className="row profile hidden">
                     {!editMode && <button className='greenButton' onClick={()=> setEditMode(true)}>
-                    Modifica datele
+                    Modifică datele
                     </button>}
                     {editMode && 
                     <button type="submit" className='greenButton'>
-                        Salveaza Modificarile
+                        Salvează Modificările
                     </button>}
                     
                     {editMode &&
                     <button className='greenButton' onClick={()=> setEditMode(false)}>
-                    Renunta
+                    Renuntă
                     </button>}
                 </div>
                 

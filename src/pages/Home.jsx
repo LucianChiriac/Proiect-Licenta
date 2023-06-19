@@ -10,9 +10,9 @@ return(
                     </div>
                 </div>
                 <div className="homeTitle col-50">
-                    <h1>Iulia Paslaru</h1>
-                    <div className="subtitle">PSIHOLOG, PSIHOTERAPEUT IASI</div>
-                    <div>"Lorem ipsum something text very short optional"</div>
+                    <h1>Iulia Pâslaru</h1>
+                    <div className="subtitle">PSIHOTERAPEUT {'\n'} TRAINER DEZVOLTARE PERSONALĂ</div>
+                    <div className="motto">Fii schimbarea pe care o dorești ȋn lume</div>
                 </div>
             </div>
         </div>
