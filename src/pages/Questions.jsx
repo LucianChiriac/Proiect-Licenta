@@ -61,10 +61,21 @@ return(
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+            <p>
+              Un psiholog este un specialist în domeniul psihologiei, care studiază comportamentul uman și procesele mentale. Psihologii sunt interesați de înțelegerea modului în care oamenii gândesc, simt și interacționează cu lumea din jurul lor. Ei utilizează metode științifice pentru a investiga și a evalua aspectele psihologice ale individului și ale grupurilor sociale.
+            </p>
+            <p>
+            Rolul unui psiholog este de a ajuta oamenii să-și înțeleagă emoțiile, gândurile și comportamentele și să le dezvolte abilitățile de adaptare și rezolvare a problemelor. Psihologii pot lucra într-o varietate de domenii, inclusiv în sănătate mentală, educație, cercetare, resurse umane, consiliere și dezvoltare personală.
+            </p>
+            <p>
+            Prin intermediul diferitelor tehnici și intervenții terapeutice, psihologii ajută persoanele să-și îmbunătățească bunăstarea emoțională și să-și dezvolte abilitățile de gestionare a stresului, relațiilor interpersonale, anxietății, depresiei și altor probleme psihologice.
+            </p>
+            <p>
+            Este important să menționăm că un psiholog nu este la fel ca un psihiatru. Un psihiatru este un medic specializat în tratarea problemelor de sănătate mentală și are posibilitatea de a prescrie medicamente, în timp ce un psiholog se concentrează pe evaluarea, diagnosticarea și tratamentul problemelor emoționale și comportamentale, folosind metode terapeutice și de consiliere psihologică.
+            </p>
+            <p>
+            În concluzie, un psiholog este un profesionist care utilizează cunoștințele și abilitățile sale în psihologie pentru a ajuta oamenii să-și îmbunătățească sănătatea mentală, relațiile interpersonale și calitatea vieții în general.
+            </p>
           </Typography>
         </AccordionDetails>
       </Accordion>

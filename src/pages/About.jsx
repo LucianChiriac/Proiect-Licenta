@@ -12,13 +12,22 @@ function About(){
                     <div className="aboutContent">
                         <div>DESPRE MINE</div>
                         <h1>Iulia Pâslaru</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in ex mi. Morbi elementum sagittis dui, quis blandit urna imperdiet id. Nam pulvinar mollis ultricies. Mauris eu lorem eu lectus iaculis elementum sit amet et felis. Vestibulum rhoncus vehicula magna, sed viverra lectus. Donec mattis orci at bibendum aliquam. 
+                        <p>Bună! Mă numesc Iulia și sunt un psihoterapeut și trainer de dezvoltare personală. Îmi dedic timpul și energia pentru a ajuta oamenii să-și descopere și să-și exploreze potențialul, să-și depășească obstacolele și să-și atingă obiectivele personale și profesionale.
                         </p>
                         <p>
-                        Sed ligula sem, ullamcorper vel luctus vel, fermentum sed libero. Nullam ac neque eu nulla imperdiet feugiat. Duis nec mauris mollis, scelerisque dui ac, posuere magna. Vivamus mollis sit amet mauris dapibus mollis. Donec at fringilla dui. Donec non libero turpis. Sed vel rutrum nunc. Donec pellentesque nec diam et bibendum. Sed nibh diam, egestas et ultrices sed, lobortis a nibh. 
+                        Cred cu tărie în puterea transformării și în capacitatea fiecărei persoane de a-și îmbunătăți calitatea vieții. Prin experiența și cunoștințele acumulate de-a lungul anilor, am dezvoltat abilități solide în domeniul psihologiei și al dezvoltării personale, pe care le aplic în mod individualizat pentru fiecare persoană care îmi caută ajutorul.
                         </p>
                         <p>
-                        Ut eget leo risus. Aliquam egestas orci turpis, ut iaculis quam commodo vel. Praesent molestie felis vel facilisis tincidunt. Donec congue ligula eu porta posuere. Quisque vitae massa vitae ligula consequat aliquet. Etiam quis convallis nunc, a semper ante. Aenean ac diam ac velit venenatis consectetur sed vel nunc. Nulla pretium magna vitae tellus tincidunt rutrum. Nulla pretium ligula vitae elit mattis, nec dictum mauris pharetra. 
+                        Prin intermediul sesiunilor de terapie și a programelor de dezvoltare personală pe care le ofer, încurajez autocunoașterea, înțelegerea emoțiilor și a gândurilor, precum și dezvoltarea abilităților de comunicare și relaționare sănătoasă. Colaborez cu clienții mei într-un mediu sigur și confidențial, oferindu-le suportul și îndrumarea necesare pentru a-și depăși dificultățile și a-și atinge obiectivele.
+                        </p>
+                        <p>
+                        Fie că te confrunți cu probleme de anxietate, depresie, stres sau dificultăți în relații, sunt aici pentru tine. Prin lucrul împreună, vom explora modalități eficiente de a-ți gestiona emoțiile, de a-ți dezvolta abilitățile de coping și de a construi o viață echilibrată și împlinită.
+                        </p>
+                        <p>
+                        Îmi place să creez un mediu cald, prietenos și non-judgmental, în care fiecare persoană să se simtă în siguranță și acceptată. Împreună, vom descoperi resursele și potențialul tău interior, construind o bază solidă pentru creștere și transformare.
+                        </p>
+                        <p>
+                        Te invit să explorezi pagina mea și să descoperi mai multe despre serviciile pe care le ofer. Dacă simți că ai nevoie de sprijin și îndrumare în calatoria ta personală, nu ezita să mă contactezi. Abia aștept să lucrez împreună cu tine și să te susțin în atingerea obiectivelor tale.
                         </p>
                     </div>
                 </div>

@@ -1,20 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-
-///
-import UserAppointments from "./pages/UserAppointments";
-import MyDatePicker from "./components/Date_Picker/DatePicker";
 import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  Link,
-  browserHistory,
 } from "react-router-dom";
 // pages
 import About from "./pages/About";
-import Booking from "./pages/Booking";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Questions from "./pages/Questions";
@@ -28,23 +21,19 @@ import UserBookings from "./pages/user/UserBookings";
 import Appointments from "./pages/admin/Appointments";
 import Pacienti from "./pages/admin/Pacienti";
 //
-import Error from "./Error";
-import { loader as servicesLoader } from "./components/Available Services/AvailableServices";
-import { Loader as userAppointmentsLoader } from "./pages/user/UserBookings";
 import { Authenticator } from "@aws-amplify/ui-react";
 import { RequireAuth } from "./components/RequireAuth";
 import NewAppointment from "./pages/user/NewAppointment";
 // Contexts
 import StepContextProvider from "./StepperContext";
 import CalendarContextProvider from "./CalendarContext";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="Home" element={<Home />} />
-      <Route path="/User Appointments" element={<UserAppointments />} />
       <Route path="About" element={<About />} />
-      <Route path="Booking" element={<Booking />} />
       <Route path="Contact" element={<Contact />} />
       <Route path="Questions" element={<Questions />} />
       <Route path="Services" element={<Services />} />

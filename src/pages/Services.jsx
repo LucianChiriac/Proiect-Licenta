@@ -24,14 +24,34 @@ function Services(){
                 <div className="firstPage">
                     <div className="servicesContent">
                         <h1>SERVICII OFERITE</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in ex mi. Morbi elementum sagittis dui, quis blandit urna imperdiet id. Nam pulvinar mollis ultricies. Mauris eu lorem eu lectus iaculis elementum sit amet et felis. Vestibulum rhoncus vehicula magna, sed viverra lectus. Donec mattis orci at bibendum aliquam. 
+                        <p>Bine ai venit în secțiunea de Servicii! Aici vei găsi o gamă variată de servicii personalizate, concepute pentru a sprijini și îmbunătăți starea ta de bine și dezvoltarea personală.
                         </p>
+                       <ol>
+                        <li>Terapie Individuală</li>
+                        <p>În cadrul terapiei individuale, ofer suport și îndrumare personalizată pentru a te ajuta să explorezi și să înțelegi mai profund aspectele care te afectează. Lucrăm împreună pentru a identifica sursele de stres, anxietate sau alte probleme, și pentru a găsi soluții practice și eficiente care să-ți îmbunătățească calitatea vieții.
+                        </p>
+                        <li>Terapie de Cuplu</li>
                         <p>
-                        Sed ligula sem, ullamcorper vel luctus vel, fermentum sed libero. Nullam ac neque eu nulla imperdiet feugiat. Duis nec mauris mollis, scelerisque dui ac, posuere magna. Vivamus mollis sit amet mauris dapibus mollis. Donec at fringilla dui. Donec non libero turpis. Sed vel rutrum nunc. Donec pellentesque nec diam et bibendum. Sed nibh diam, egestas et ultrices sed, lobortis a nibh. 
+                        Dacă te afli într-o relație și dorești să îmbunătățești comunicarea, să depășiți conflictele sau să reconstruiți conexiunea emoțională, terapia de cuplu poate fi o soluție eficientă. Împreună cu partenerul tău, vom explora dinamica relației și vom învăța strategii și tehnici pentru a vă construi o relație sănătoasă și fericită. 
                         </p>
+                        <li>Dezvoltare Personală</li>
+                        <p>
+                        Programul de dezvoltare personală este conceput pentru a te sprijini în obținerea unui nivel superior de conștientizare de sine și pentru a-ți dezvolta potențialul neexploatat. Vom explora valorile, pasiunile și obiectivele tale și vom lucra împreună pentru a construi abilitățile necesare pentru a-ți atinge succesul personal și profesional.
+                        </p>
+                        <li>Consiliere pentru gestionarea stresului</li>
+                        <p>
+                        Stresul poate avea un impact semnificativ asupra sănătății și bunăstării noastre. Prin consilierea pentru gestionarea stresului, vei învăța tehnici și strategii eficiente pentru a-ți gestiona și reduce nivelul de stres. Vom explora cauzele stresului și vom dezvolta un plan personalizat pentru a-ți recăpăta echilibrul și a-ți îmbunătăți calitatea vieții.
+                        </p>
+                       </ol>
                     </div>
                     <div className="imgContainer">
                         <img src={keyhole} alt="profile"></img>
+                        <p>
+                        Indiferent de serviciul pe care îl alegi, te asigur că vei primi suportul și atenția de care ai nevoie pentru a-ți atinge obiectivele. Fiecare ședință va fi personalizată în funcție de nevoile și dorințele tale, și vom lucra într-un mediu sigur și confidențial.
+                        </p>
+                        <p>
+                        Te invit să explorezi mai multe detalii despre fiecare serviciu pe pagina noastră și să mă contactezi pentru a programa o primă întâlnire. Abia aștept să colaborez cu tine și să te susțin în călătoria ta către o viață mai fericită și împlinită.
+                        </p>
                     </div>
                 </div>
                 <div className="secondPage">
