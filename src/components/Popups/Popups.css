@@ -2,6 +2,7 @@
     font-size: 14px;
     margin: auto;
     width: auto;
+    max-width: 80%;
     background-color: #ecfffb;
     border: 2px solid rgba(13, 42, 20, 0.875);
     border-radius: 25px;
@@ -111,7 +112,7 @@
     padding-top: 10px;
 }
 
-.formAdminAddCalendar .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+.formAdminAddCalendar .MuiFormControl-root{
     width: 100%;
 }
 
@@ -123,5 +124,5 @@
 
 .cameraIcon{
     vertical-align:text-bottom;
-    color:rgb(50, 18, 229)
+    color:#3212e5
 }

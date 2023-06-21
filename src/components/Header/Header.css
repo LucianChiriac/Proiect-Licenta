@@ -6,6 +6,7 @@ body {
   position: sticky !important;
   top: 0;
   border-bottom: 3px solid var(--green-highlight);
+  z-index: 3;
 }
 .mainNav{
     display: flex;

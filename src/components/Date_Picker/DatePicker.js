@@ -30,8 +30,8 @@ function MyDatePicker(props) {
     handleDateChange,
     getMonthText,
   } = useSlotPicker({
-    eventDuration: serviceData.duration,
-    bookedSlots: serviceData.booked_slots,
+    eventDuration: serviceData?.duration,
+    bookedSlots: serviceData?.booked_slots,
   });
 
   useEffect(

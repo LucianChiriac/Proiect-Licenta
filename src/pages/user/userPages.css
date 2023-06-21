@@ -24,7 +24,7 @@ h3{
     background-color: var(--menu-green) !important;
   }
 
-.MuiStep-root MuiStep-horizontal css-1bw0nnu-MuiStep-root{
+.MuiStep-root .MuiStep-horizontal{
     width: 100% !important;
 }
 

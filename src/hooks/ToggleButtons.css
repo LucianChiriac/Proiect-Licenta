@@ -14,6 +14,6 @@
 }
 
 /* The container with all buttons */
-.css-mjlvw-MuiToggleButtonGroup-root{
+.MuiToggleButtonGroup-root{
     gap: 10px;
 }
